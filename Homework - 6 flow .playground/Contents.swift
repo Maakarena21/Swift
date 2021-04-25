@@ -62,8 +62,8 @@ struct Deposit { // создаем структуру Депозит
         self.pounds = pounds + pence / 100 // присваиваем рублям сумм рублей + копеек деленных на 100 без остатка
     }
 }
-let staff = Deposit(pounds: 23, pence: 1243) // создаем константу и присваиваем ей депозит который принимает на вход рубли и копейки
-print(staff)
+    let staff = Deposit(pounds: 23, pence: 1243) // создаем константу и присваиваем ей депозит который принимает на вход рубли и копейки
+    print(staff)
 struct Bank { // создаем структуру Bank
     var deposit: Deposit // создаем переменную deposit типа Deposit
     init(pounds: UInt = 0,pence: UInt = 0) { // инициализатор принимает на вход рубли и копейки с дефолтным значением 0
@@ -158,3 +158,103 @@ var eff = File(text: "KY-KY", name: "File") // создаем переменну
 var keff = Directory() // создаем переменную присваиваем класс директорию
 keff.file.append(eff) // вставляем в директорию файл
 keff.secondName(name: "File") // вызываем функцию secondName
+
+
+/* USER DEFAULTS Storage (UserDefaults.standard),
+   FILE STORAGE Storage (FileManager) используйте ключ в качестве имени файла
+   Keychain Storage (KeychainAccess)
+ */
+
+struct User: Codable {
+    let id: String
+    let name: String
+    let avatar: URL
+}
+
+protocol Storage {
+    func set(data: Data, key: String)
+    func getData(key: String) -> Data?
+}
+
+class UserDef: Storage { //
+    var user = UserDefaults.standard
+    
+    func set(data: Data, key: String) {
+        user.set(data, forKey: key)
+    }
+    func getData(key: String) -> Data? {
+        return user.data(forKey: key)
+    }
+}
+
+//File manager
+class FileManag: Storage {
+    var val = FileManager.default
+    
+    func set(data: Data, key: String) {
+        val.createFile(atPath: key, contents: data)
+    }
+    func getData(key: String) -> Data? {
+        return val.contents(atPath: key)
+        
+    }
+}
+
+// Dictionary - InMemoryStorage
+class InMemoryStorage: Storage {
+    var dictionary: [String: Data] = [:]
+
+    func set(data: Data, key: String) {
+        dictionary[key] = data
+    }
+    
+    func getData(key: String) -> Data? {
+        return dictionary[key]
+    }
+}
+
+class StoragesAssembly {
+    var inMemory: Storage {
+        return InMemoryStorage()
+    }
+    
+    var userDefaults: Storage {
+        return UserDef()
+    }
+    
+    var filesystemStorage: Storage {
+        return FileManag()
+    }
+}
+
+
+let assembly = StoragesAssembly()
+let storage = assembly.inMemory
+
+
+let userToStore = User(id: "wefwefewf", name: "wefwewef", avatar: URL(string: "sefwrgf")!)
+let userData1 = try! JSONEncoder().encode(userToStore)
+
+storage.set(data: userData, key: "test_user_key")
+
+if let userData2 = storage.getData(key: "test_user_key") {
+    let userFromStorage = try! JSONDecoder().decode(User.self, from: userData2)
+    print("userFromStorage - \(userFromStorage)")
+}
+
+let storage3 = assembly.userDefaults
+storage3.set(data: userData1, key: "test_key")
+if let userData3 = storage3.getData(key: "test_key") {
+    let userFromStorage2 = try! JSONDecoder().decode(User.self, from: userData3)
+    print("UserDefaults - \(userFromStorage2)")
+}
+
+let storage4 = assembly.filesystemStorage
+storage4.set(data: userData1, key: "test_taff")
+    if let userData4 = storage4.getData(key: "test_taff") {
+        let userFromStorage4 = try! JSONDecoder().decode(User.self, from: userData4)
+        print("FileManager - \(userFromStorage4)")
+    }
+
+
+
