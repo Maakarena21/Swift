@@ -31,7 +31,7 @@ func reverseInteger(a: Int) -> Int { // функция принимает чис
     }
     return y // возвращаем у
 }
-print(reverseInteger(a: 345)) // проверка
+print(reverseInteger(a: 345)) // делаем проверку
 
 // Задача 3 - Remove Element
 //Given an array nums and a value val, remove all instances of that value in-place and return the new length.
