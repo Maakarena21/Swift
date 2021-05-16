@@ -165,7 +165,7 @@ keff.secondName(name: "File") // вызываем функцию secondName
    Keychain Storage (KeychainAccess)
  */
 
-struct User: Codable {
+struct User: Codable { // cтруктура Юзер
     let id: String
     let name: String
     let avatar: URL
