@@ -7,12 +7,21 @@ class ServicesAssembly {
     }
     
     var fastPaymentService: FastPaymentsService {
-        return FastPaymentsService()
+        let fastPaymentsService = FastPaymentsServiceImpl()
+        fastPaymentsService.moneyService = moneyService
+        return fastPaymentsService
     }
-    var preferencesAssembly: PreferencesService {
+    var preferencesService: PreferencesService {
         let preferencesService = PreferencesServiceImpl()
         preferencesService.storage = storageAssembly.inMemory
         return preferencesService
     }
+    var moneyService: MoneyService {
+        return MoneyServiceImpl(userStorage: storageAssembly.userStorage, productStorage: storageAssembly.productStorage, productService: productService, preferencesService: preferencesService)
+    }
 }
 
+
+// абстракция
+// реализация
+// добавить в ассембли
