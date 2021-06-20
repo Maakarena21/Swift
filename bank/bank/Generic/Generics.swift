@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4cb4a35c1ef63d07e22498b9d2e079b1e0a84295
 import Foundation
 
 func printData<T: Decodable>(key: String, type: T.Type) {
@@ -12,4 +16,11 @@ func printData<T: Decodable>(key: String, type: T.Type) {
 // Generics почитать + порешать задачи
 // EasyDI почитать
 // CocoaPods почитать
+<<<<<<< HEAD
 // https://habr.com/ru/post/331710/ -
+=======
+
+// https://habr.com/ru/post/331710/ -
+
+
+>>>>>>> 4cb4a35c1ef63d07e22498b9d2e079b1e0a84295
