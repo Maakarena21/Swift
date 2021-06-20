@@ -34,6 +34,7 @@ enum ProductType: Codable {
     // 2 шаг - описываем конструктор https://developer.apple.com/documentation/swift/decoder/2892621-container
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         guard container.allKeys.count == 1,
               let key = container.allKeys.first else {
             throw ProductTypeDecodingError.wrongNumberOfKeys
@@ -66,3 +67,7 @@ struct Product: Codable {
     let name: String
     let type: ProductType
 }
+
+
+
+

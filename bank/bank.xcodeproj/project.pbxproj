@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09080BEF266CCD2B00C9B25B /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09080BEE266CCD2B00C9B25B /* ProductService.swift */; };
+		09080BF1266CD02400C9B25B /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09080BF0266CD02400C9B25B /* ServicesAssembly.swift */; };
+		09080BF3266CD42200C9B25B /* FastPaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09080BF2266CD42200C9B25B /* FastPaymentService.swift */; };
+		09080BF5266CEBF000C9B25B /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09080BF4266CEBF000C9B25B /* MoneyService.swift */; };
 		09ADAD6626402D4500054D63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD6526402D4500054D63 /* main.swift */; };
 		09ADAD7026402D7800054D63 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD6F26402D7800054D63 /* Storage.swift */; };
 		09ADAD7226402D8B00054D63 /* StorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7126402D8B00054D63 /* StorageAssembly.swift */; };
-		09ADAD7426402D9800054D63 /* bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7326402D9800054D63 /* bank.swift */; };
+		09ADAD7426402D9800054D63 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7326402D9800054D63 /* Bank.swift */; };
 		09ADAD7626402DAB00054D63 /* BankAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7526402DAB00054D63 /* BankAssembly.swift */; };
 		09ADAD7926402FFC00054D63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7826402FFC00054D63 /* User.swift */; };
 		09ADAD7C2640309C00054D63 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7B2640309C00054D63 /* Product.swift */; };
-		D1CAFF9F265550A600791765 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAFF9E265550A600791765 /* UserStorage.swift */; };
-		D1CAFFA3265550D300791765 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAFFA2265550D300791765 /* ProductStorage.swift */; };
+		09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCD2652F55C007658E5 /* ProductStorage.swift */; };
+		09DCFCD02652F568007658E5 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCF2652F568007658E5 /* UserStorage.swift */; };
+		D1286E082679E57100AC4F0F /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1286E072679E57100AC4F0F /* SettingsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,16 +36,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09080BEE266CCD2B00C9B25B /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		09080BF0266CD02400C9B25B /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		09080BF2266CD42200C9B25B /* FastPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPaymentService.swift; sourceTree = "<group>"; };
+		09080BF4266CEBF000C9B25B /* MoneyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
 		09ADAD6226402D4500054D63 /* bank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bank; sourceTree = BUILT_PRODUCTS_DIR; };
 		09ADAD6526402D4500054D63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		09ADAD6F26402D7800054D63 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		09ADAD7126402D8B00054D63 /* StorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAssembly.swift; sourceTree = "<group>"; };
-		09ADAD7326402D9800054D63 /* bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bank.swift; sourceTree = "<group>"; };
+		09ADAD7326402D9800054D63 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		09ADAD7526402DAB00054D63 /* BankAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAssembly.swift; sourceTree = "<group>"; };
 		09ADAD7826402FFC00054D63 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09ADAD7B2640309C00054D63 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		D1CAFF9E265550A600791765 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserStorage.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift/bank/bank/UserStorage/UserStorage.swift"; sourceTree = "<group>"; };
-		D1CAFFA2265550D300791765 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductStorage.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift/bank/bank/ProductStorage/ProductStorage.swift"; sourceTree = "<group>"; };
+		09DCFCCD2652F55C007658E5 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStorage.swift; sourceTree = "<group>"; };
+		09DCFCCF2652F568007658E5 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		D1286E072679E57100AC4F0F /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift.homework/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09080BEC266CCCA300C9B25B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				09080BEE266CCD2B00C9B25B /* ProductService.swift */,
+				09080BF0266CD02400C9B25B /* ServicesAssembly.swift */,
+				09080BF2266CD42200C9B25B /* FastPaymentService.swift */,
+				09080BF4266CEBF000C9B25B /* MoneyService.swift */,
+				D1286E072679E57100AC4F0F /* SettingsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		09ADAD5926402D4500054D63 = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +95,9 @@
 		09ADAD6426402D4500054D63 /* bank */ = {
 			isa = PBXGroup;
 			children = (
-				D1CAFFA1265550C000791765 /* ProductStorage */,
-				D1CAFF9D2655509000791765 /* UserStorage */,
+				09080BEC266CCCA300C9B25B /* Services */,
+				09DCFCCC2652F545007658E5 /* ProductStorage */,
+				09DCFCCB2652F530007658E5 /* UserStorage */,
 				09ADAD7A2640308C00054D63 /* Product */,
 				09ADAD7726402FEE00054D63 /* User */,
 				09ADAD6E26402D5D00054D63 /* Storage */,
@@ -87,7 +110,7 @@
 		09ADAD6C26402D5000054D63 /* Bank */ = {
 			isa = PBXGroup;
 			children = (
-				09ADAD7326402D9800054D63 /* bank.swift */,
+				09ADAD7326402D9800054D63 /* Bank.swift */,
 				09ADAD7526402DAB00054D63 /* BankAssembly.swift */,
 			);
 			path = Bank;
@@ -118,18 +141,18 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
-		D1CAFF9D2655509000791765 /* UserStorage */ = {
+		09DCFCCB2652F530007658E5 /* UserStorage */ = {
 			isa = PBXGroup;
 			children = (
-				D1CAFF9E265550A600791765 /* UserStorage.swift */,
+				09DCFCCF2652F568007658E5 /* UserStorage.swift */,
 			);
 			path = UserStorage;
 			sourceTree = "<group>";
 		};
-		D1CAFFA1265550C000791765 /* ProductStorage */ = {
+		09DCFCCC2652F545007658E5 /* ProductStorage */ = {
 			isa = PBXGroup;
 			children = (
-				D1CAFFA2265550D300791765 /* ProductStorage.swift */,
+				09DCFCCD2652F55C007658E5 /* ProductStorage.swift */,
 			);
 			path = ProductStorage;
 			sourceTree = "<group>";
@@ -191,15 +214,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1CAFF9F265550A600791765 /* UserStorage.swift in Sources */,
+				09080BEF266CCD2B00C9B25B /* ProductService.swift in Sources */,
 				09ADAD6626402D4500054D63 /* main.swift in Sources */,
-				09ADAD7426402D9800054D63 /* bank.swift in Sources */,
+				09ADAD7426402D9800054D63 /* Bank.swift in Sources */,
+				09080BF1266CD02400C9B25B /* ServicesAssembly.swift in Sources */,
 				09ADAD7926402FFC00054D63 /* User.swift in Sources */,
 				09ADAD7626402DAB00054D63 /* BankAssembly.swift in Sources */,
 				09ADAD7026402D7800054D63 /* Storage.swift in Sources */,
+				09DCFCD02652F568007658E5 /* UserStorage.swift in Sources */,
+				09080BF5266CEBF000C9B25B /* MoneyService.swift in Sources */,
+				09080BF3266CD42200C9B25B /* FastPaymentService.swift in Sources */,
+				09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */,
 				09ADAD7226402D8B00054D63 /* StorageAssembly.swift in Sources */,
+				D1286E082679E57100AC4F0F /* SettingsService.swift in Sources */,
 				09ADAD7C2640309C00054D63 /* Product.swift in Sources */,
-				D1CAFFA3265550D300791765 /* ProductStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

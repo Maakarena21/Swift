@@ -18,15 +18,6 @@ class UserDef: Storage {
     }
 }
 
-extension Storage {
-    func remove(key: String) {}
-}
-
-extension UserDef {
-    func remove(key: String) {
-        user.removeObject(forKey: key)
-    }
-}
 
 class FileManag: Storage {
     
@@ -43,15 +34,14 @@ class FileManag: Storage {
 
 class InMemoryStorage: Storage {
     
+    static let shared = InMemoryStorage()
+    
     var dictionary: [String: Data] = [:]
+    
     func set(data: Data, key: String) {
-        guard dictionary[key] == nil else {
-            print("trying to overwrite extisting value - it's an error")
-            return
-        }
-        
         dictionary[key] = data
     }
+    
     func get(key: String) -> Data? {
         return dictionary[key]
     }

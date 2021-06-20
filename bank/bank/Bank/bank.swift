@@ -1,5 +1,10 @@
 import Foundation
 
+enum BankErrors: Error {
+    case productNotFound
+}
+
+
 protocol Bank {
     func createClient(name: String,
                       secondName: String,
@@ -9,24 +14,66 @@ protocol Bank {
                       address: Address) -> User
     func createDepositProduct(user: User) -> Product
     func createCreditProduct(user: User) -> Product
+    func add(phone: Phone, product: Product, money: Float) throws
+    func remove(phone: Phone, product: Product, money: Float) throws
+    func getPreferences(user:User) -> ProductPreferences?
+    func set(user: User, set: ProductPreferences)
 }
 
 class BankImpl {
     
-//    let storage: Storage // зависимость
+    let preferencesService: PreferencesService
     let userStorage: UserStorage
     let productStorage: ProductStorage
+    let productService: ProductService
+    
     
     init(
         storage: UserStorage,
-        productStorage: ProductStorage
+        productStorage: ProductStorage,
+        productService: ProductService,
+        preferencesService: PreferencesService
         ) { // инъекция зависимости
         userStorage = storage
         self.productStorage = productStorage
+        self.productService = productService
+        self.preferencesService = preferencesService
     }
 }
 
 extension BankImpl: Bank {
+    func getPreferences(user: User) -> ProductPreferences? {
+        return preferencesService.getPreferences(user: user) // done
+    }
+    
+    func set(user: User, set: ProductPreferences) {
+        preferencesService.set(preferences: set, user: user) // fix
+    }
+    
+    
+   
+    func add(phone: Phone, product: Product, money: Float) throws {
+        
+        let user = try userStorage.search(phone: phone)
+        let productArray = productStorage.get(user: user)
+        guard let productIndex = productArray.firstIndex(where: {$0.id == product.id}) else {
+            throw BankErrors.productNotFound
+        }
+            let overrideProduct = try productService.add(money: money, product: productArray[productIndex])
+            productStorage.add(user: user, product: overrideProduct)
+    }
+    
+    func remove(phone: Phone, product: Product, money: Float) throws{
+        
+        let user = try userStorage.search(phone: phone)
+        let productArray = productStorage.get(user: user)
+        guard let productIndex = productArray.firstIndex(where: {$0.id == product.id}) else {
+            throw BankErrors.productNotFound
+        }
+        let overrideProduct = try productService.remove(money: money, product: productArray[productIndex])
+        productStorage.add(user: user, product: overrideProduct)
+    }
+    
     func createClient(name: String, secondName: String, lastName: String, email: String, phone: Phone, address: Address) -> User {
         let user = User(id: UUID().uuidString,
                         name: name,
@@ -35,8 +82,15 @@ extension BankImpl: Bank {
                         email: email,
                         phone: phone,
                         address: address)
+        do {
             
-        userStorage.add(user: user)
+        try userStorage.add(user: user)
+            
+        } catch {
+            
+            print("User exists")
+            
+        }
 
         return user
     }
@@ -46,7 +100,7 @@ extension BankImpl: Bank {
                               name: "Разделяй и зарабатывай!",
                               type: .deposit(Deposit(percent: 12, summ: 0, type: .month)))
         
-        productStorage.addProduct(user: user, product: product)
+        productStorage.add(user: user, product: product)
         
         return product
     }
@@ -56,139 +110,21 @@ extension BankImpl: Bank {
                               name: "Бери щас плати всю жизнь!",
                               type: .credit(Credit(summ: 15_000, months: 12, percentYear: 720)))
         
-        productStorage.addProduct(user: user, product: product)
+        productStorage.add(user: user, product: product)
         
         return product
     }
     
 }
 
-//extension Bank {
-//
-//    func store(client: User) {}
-//
-//    func store(product: Product, user: User) {}
-//
-//}
 
-//extension BankImpl {
+//let service = FastPaymentsAssembly().service
+//let bank1 = BankAssembly().bank
+//let bank2 = BankAssembly().bank
 //
-//    /*если надоело гонять JSONEncoder/JSONDecoder - можете прочитать про Generic и Generic constraint. Либо сделать абстракцию -= UserStorage,
+// создать клиентов, создать продукты клиентам, положить деньги на счет клиентов (пункт 0)
 //
-//     {getUsers() -> [Users], setUsers(_users: [Users])}, в него надо инжектнуть Storage*/
+//service.register(receiver: bank1)
+//service.register(reciever: bank2)
 //
-//    func store(client: User) {
-//
-//        guard let userData = storage.get(key: "clients") else { return }
-//
-//        do {
-//            var userArray = try JSONDecoder().decode([User].self, from: userData)
-//
-//                for i in userArray {
-//                if client.id != i.id {
-//                    userArray.append(client)
-//                }
-//            }
-//
-//            let userArrayData = try JSONEncoder().encode(userArray)
-//            storage.set(data: userArrayData, key: "clients")
-//
-//        } catch {
-//
-//            print("Error - \(error)")
-//
-//        }
-        
-        
-        
-        /* клиентов храним в массиве:
-         
-         - читаем Data из словаря по ключу "clients"
-         - JSONDecoder() -> [User] (тип [User].self)
-         - аппендим в массив User, проверив предвраительно, что юзера с таким айдишником в массиве нет
-         - и если юзера нет - то аппендим в массив,
-         - JSONEncoder() -> Data -> storage.set(data:key)
-         */
-//    }
-//
-//    func store(product: Product, user: User) {
-//
-//        guard let productData = storage.get(key: "products_of_user_\(user.id)") else {
-//            return
-//        }
-//
-//        var arrayProduct = try! JSONDecoder().decode([Product].self, from: productData)
-//
-//        for i in arrayProduct {
-//            if product.id != i.id {
-//                arrayProduct.append(product)
-//            }
-//        }
-//
-//        let arrayProductData = try! JSONEncoder().encode(arrayProduct)
-//
-//        storage.set(data: arrayProductData, key: "products_of_user_\(user.id)")
-//
-//
-//        /*
-//          - ключ формируется: "products_of_user_\(user.id)"
-//         - достаем массив продуктов -> JSONDecoder() -> [Product] (тип [Product].self)
-//         - проверям, что в массиве нету продукта с указанным идентификатором
-//         - аппендим в массив
-//         - JSONEncoder() -> Data -> storage.set(data:key)
-//         */
-//    }
-//}
-
-
-
-
-
-
-/*
- 
- Реализовать переводы из банка в банк по номеру телефона
- 
- */
-
-protocol MoneyReciever {
-    func recieve(summ: Float, phone: Phone) -> Bool
-}
-
-protocol MoneySender {
-    func send(summ: Float, phone: Phone) -> Bool
-}
-
-// в банк инжектим MoneySender
-// сам банк реализует MoneyReciever
-
-class FastPaymentsService: MoneySender {
-    var recievers = [MoneyReciever]()
-    
-    func send(summ: Float, phone: Phone) -> Bool {
-        var isSent = false
-        
-        recievers.forEach {
-            if $0.recieve(summ: summ, phone: phone) {
-                isSent = true
-                return
-            }
-        }
-        
-        return isSent
-    }
-    
-    func register(reciever: MoneyReciever) {
-        recievers.append(reciever)
-    }
-}
-
-
-/*
-let bank1 = BankAssembly().bank
-let bank2 = BankAssembly().bank
-
-bank1.send(summ: 123, phone: Phone(countryCode: 7, numberPhone: 3234324234))
-
-*/
-
+//service.send(summ: <#T##Float#>, phone: <#T##Phone#>)
