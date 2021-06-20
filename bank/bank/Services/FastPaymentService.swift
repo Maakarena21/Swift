@@ -3,26 +3,21 @@ import Foundation
 enum FastPaymentsError: Error{
     
 }
-class FastPaymentsService {
+
+protocol FastPaymentsService {
+    func send(from: Phone, summ: Float, to: Phone) throws
+}
+class FastPaymentsServiceImpl: FastPaymentsService {
     
     
-    var banks = [MoneyReciever & MoneySender]()
-    
+    var moneyService: MoneyService! // инъекция
     
     
     func send(from: Phone, summ: Float, to: Phone) throws {
      
-        
+        try moneyService.send(from: from, summ: summ)
+        try moneyService.recieve(summ: summ, phone: to) // done
     }
     
-    func register(bank: MoneyReciever & MoneySender) {
-        banks.append(bank)
-    }
+    
 }
-
-
-
-
-
-
-

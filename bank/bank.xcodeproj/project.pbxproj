@@ -20,7 +20,8 @@
 		09ADAD7C2640309C00054D63 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7B2640309C00054D63 /* Product.swift */; };
 		09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCD2652F55C007658E5 /* ProductStorage.swift */; };
 		09DCFCD02652F568007658E5 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCF2652F568007658E5 /* UserStorage.swift */; };
-		D1286E082679E57100AC4F0F /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1286E072679E57100AC4F0F /* SettingsService.swift */; };
+		D112E88A267F690C00D8F99D /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112E889267F690B00D8F99D /* SettingsService.swift */; };
+		D112E88F267F69A300D8F99D /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D112E88E267F69A300D8F99D /* Generics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,7 +51,8 @@
 		09ADAD7B2640309C00054D63 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		09DCFCCD2652F55C007658E5 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStorage.swift; sourceTree = "<group>"; };
 		09DCFCCF2652F568007658E5 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
-		D1286E072679E57100AC4F0F /* SettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift.homework/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
+		D112E889267F690B00D8F99D /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
+		D112E88E267F69A300D8F99D /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift/bank/bank/Generic/Generics.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,7 @@
 				09080BF0266CD02400C9B25B /* ServicesAssembly.swift */,
 				09080BF2266CD42200C9B25B /* FastPaymentService.swift */,
 				09080BF4266CEBF000C9B25B /* MoneyService.swift */,
-				D1286E072679E57100AC4F0F /* SettingsService.swift */,
+				D112E889267F690B00D8F99D /* SettingsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -95,6 +97,7 @@
 		09ADAD6426402D4500054D63 /* bank */ = {
 			isa = PBXGroup;
 			children = (
+				D112E88D267F699000D8F99D /* Generic */,
 				09080BEC266CCCA300C9B25B /* Services */,
 				09DCFCCC2652F545007658E5 /* ProductStorage */,
 				09DCFCCB2652F530007658E5 /* UserStorage */,
@@ -157,6 +160,14 @@
 			path = ProductStorage;
 			sourceTree = "<group>";
 		};
+		D112E88D267F699000D8F99D /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				D112E88E267F69A300D8F99D /* Generics.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D112E88A267F690C00D8F99D /* SettingsService.swift in Sources */,
 				09080BEF266CCD2B00C9B25B /* ProductService.swift in Sources */,
 				09ADAD6626402D4500054D63 /* main.swift in Sources */,
 				09ADAD7426402D9800054D63 /* Bank.swift in Sources */,
@@ -225,8 +237,8 @@
 				09080BF5266CEBF000C9B25B /* MoneyService.swift in Sources */,
 				09080BF3266CD42200C9B25B /* FastPaymentService.swift in Sources */,
 				09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */,
+				D112E88F267F69A300D8F99D /* Generics.swift in Sources */,
 				09ADAD7226402D8B00054D63 /* StorageAssembly.swift in Sources */,
-				D1286E082679E57100AC4F0F /* SettingsService.swift in Sources */,
 				09ADAD7C2640309C00054D63 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
