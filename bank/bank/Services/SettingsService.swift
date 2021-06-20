@@ -13,7 +13,7 @@ protocol PreferencesService {
 }
 
 class PreferencesServiceImpl: PreferencesService {
-    var storage = StoragesAssembly().inMemory // инъекция
+     var storage: Storage! // инъекция через свойство
     
     func getPreferences(user: User) -> ProductPreferences? {
         guard let preferencesData = storage.get(key: "preferences_id_\(user.id)") else {

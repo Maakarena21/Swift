@@ -9,7 +9,7 @@ class BankAssembly {
         return BankImpl(storage: storagesAssembly.userStorage,
                         productStorage: storagesAssembly.productStorage,
                         productService: servicesAssembly.productService,
-                        preferencesService: servicesAssembly.preferencesAssembly)
+                        preferencesService: servicesAssembly.preferencesService)
     }
 }
 
