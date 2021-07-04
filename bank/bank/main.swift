@@ -31,5 +31,8 @@ let fastPaymentsService = servicesAssembly.fastPaymentService
 
 try fastPaymentsService.send(from: Phone(countryCode: 7, numberPhone: 9681448845), summ: 150, to: Phone(countryCode: 7, numberPhone: 9671555927))
 
-printData(key: "products_of_user_\(client1.id)", type: [Product].self)
-printData(key: "products_of_user_\(client2.id)", type: [Product].self)
+try printData(key: "products_of_user_\(client1.id)", type: [Product].self)
+try printData(key: "products_of_user_\(client2.id)", type: [Product].self)
+
+
+

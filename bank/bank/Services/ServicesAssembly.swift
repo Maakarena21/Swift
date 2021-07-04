@@ -1,4 +1,5 @@
 import Foundation
+import EasyDi
 
 class ServicesAssembly {
     private let storageAssembly = StoragesAssembly()
@@ -20,6 +21,18 @@ class ServicesAssembly {
         return MoneyServiceImpl(userStorage: storageAssembly.userStorage, productStorage: storageAssembly.productStorage, productService: productService, preferencesService: preferencesService)
     }
 }
+
+class ServicesAssemblyTwo: Assembly {
+    private lazy var storageAssembly: StoragesAssemblyTwo = context.assembly()
+    var preferencesService: PreferencesService {
+        define(init: PreferencesServiceImpl()) {
+            $0.storage = self.storageAssembly.inMemory
+            return $0
+        }
+    }
+}
+
+ServicesAssemblyTwo.instance() // будем заводить ассембли
 
 
 // абстракция

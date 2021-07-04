@@ -36,53 +36,47 @@ class UserStorageImpl: UserStorage {
     }
     
     func users() -> [User] {
-        
-        guard let usersData = storage.get(key: "clients") else {
-            return []
-        }
-        
         do {
-            let users = try JSONDecoder().decode([User].self, from: usersData)
-            
+            let users: [User] = try storage.value(key: "clients")
             return users
-            
         } catch {
-            
-            print("JSONDecoder error \(error)")
-            
             return []
         }
     }
     
+    
     func add(user: User) throws {
         
-        guard let usersData = storage.get(key: "clients") else {
-            let array = [user]
-            
-        do {
-                
-            let arrayData = try JSONEncoder().encode(array)
-                storage.set(data: arrayData, key: "clients")
-                
-        } catch {
-            throw UserStorageError.encoding(error)
+       var users = self.users()
+        if users.isEmpty {
+            try storage.set(value: [user], key: "clients")
+        } else {
+            guard users.first(where: {$0.id == user.id}) == nil else {
+                return
             }
-            return
-        }
-        
-        do {
-            var users = try JSONDecoder().decode([User].self, from: usersData)
-            
-            
-            if users.contains(where: {$0.id == user.id}) == false {
-                users.append(user)
-            }
-            
-            let usersData = try JSONEncoder().encode(users)
-            storage.set(data: usersData, key: "clients")
-            
-        } catch {
-            throw UserStorageError.decoding(error)
+            users.append(user)
+            try storage.set(value: users, key: "clients")
         }
     }
 }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+

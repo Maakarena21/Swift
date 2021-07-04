@@ -1,11 +1,13 @@
 
 import Foundation
 
-func printData<T: Decodable>(key: String, type: T.Type) {
-    guard let data = assembly.storagesAssembly.inMemory.get(key: key) else { return }
-    if let dataResult = try? JSONDecoder().decode(T.self, from: data) {
-        print(dataResult)
-    }
+enum PrintDataError: Error {
+    case printingError
+}
+
+func printData<T: Codable>(key: String, type: T.Type) throws {
+    let value: T = try assembly.storagesAssembly.inMemory.value(key: key)
+    print(value)
 }
 
 
@@ -15,5 +17,8 @@ func printData<T: Decodable>(key: String, type: T.Type) {
 // CocoaPods почитать
 
 // https://habr.com/ru/post/331710/ -
+
+
+
 
 

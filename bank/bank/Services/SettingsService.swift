@@ -16,10 +16,9 @@ class PreferencesServiceImpl: PreferencesService {
      var storage: Storage! // инъекция через свойство
     
     func getPreferences(user: User) -> ProductPreferences? {
-        guard let preferencesData = storage.get(key: "preferences_id_\(user.id)") else {
-            return nil
-        }
+         
         do {
+            let preferencesData = try storage.get(key: "preferences_id_\(user.id)")
             let preferences = try JSONDecoder().decode(
                 ProductPreferences.self, from: preferencesData)
             return preferences

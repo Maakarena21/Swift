@@ -1,7 +1,8 @@
-
+import EasyDi
 import Foundation
 
 class StoragesAssembly {
+    
     
     var inMemory: Storage {
         return InMemoryStorage.shared
@@ -24,4 +25,8 @@ class StoragesAssembly {
     }
 }
 
-
+class StoragesAssemblyTwo: Assembly {
+    var inMemory: Storage {
+        return define(scope: .lazySingleton, init: InMemoryStorage()) 
+    }
+}

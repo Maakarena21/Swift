@@ -1,48 +1,109 @@
 import Foundation
 
+enum StorageError: Error {
+    case valueNotFound
+}
+
 protocol Storage {
     func set(data: Data, key: String)
-    func get(key: String) -> Data?
+    func get(key: String) throws -> Data
+}
+
+extension Storage {
+    func set<T: Codable>(value: T, key: String) throws {
+           let data = try JSONEncoder().encode(value)
+           set(data: data, key: key)
+    }
+    
+    func value<T: Codable>(key: String) throws -> T {
+        let data = try get(key: key)
+        let value = try JSONDecoder().decode(T.self, from: data)
+        return value
+    }
 }
 
 class UserDef: Storage {
-    
-    var user = UserDefaults.standard
-    
     func set(data: Data, key: String) {
-        return user.setValue(data, forKey: key)
+        UserDefaults.standard.setValue(data, forKey: key)
     }
-    
-    func get(key: String) -> Data? {
-        return user.data(forKey: key)
+    func get(key: String) throws -> Data {
+        guard let data = UserDefaults.standard.data(forKey: key) else {
+            throw StorageError.valueNotFound
+        }
+        return data
     }
 }
 
 
 class FileManag: Storage {
-    
-    var filemanager = FileManager.default
-    
     func set(data: Data, key: String) {
-        filemanager.createFile(atPath: key, contents: data)
+        FileManager.default.createFile(atPath: key, contents: data)
     }
-    
-    func get(key: String) -> Data? {
-        return filemanager.contents(atPath: key)
+    func get(key: String) throws -> Data {
+        guard let data = FileManager.default.contents(atPath: key) else {
+            throw StorageError.valueNotFound
+        }
+        return data
     }
 }
 
+
 class InMemoryStorage: Storage {
-    
     static let shared = InMemoryStorage()
-    
     var dictionary: [String: Data] = [:]
     
     func set(data: Data, key: String) {
         dictionary[key] = data
     }
-    
-    func get(key: String) -> Data? {
-        return dictionary[key]
+    func get(key: String) throws -> Data {
+        guard let data = dictionary[key] else {
+            throw StorageError.valueNotFound
+        }
+        return data
     }
 }
+
+//class UserDef: Storage {
+//
+//    var user = UserDefaults.standard
+//
+//    func set(data: Data, key: String) {
+//        return user.setValue(data, forKey: key)
+//    }
+//
+//    func get(key: String) -> Data? {
+//        return user.data(forKey: key)
+//    }
+//}
+//
+//
+//class FileManag: Storage {
+//
+//    var filemanager = FileManager.default
+//
+//    func set(data: Data, key: String) {
+//        filemanager.createFile(atPath: key, contents: data)
+//    }
+//
+//    func get(key: String) -> Data? {
+//        return filemanager.contents(atPath: key)
+//    }
+//}
+//
+//class InMemoryStorage: Storage {
+//
+//    static let shared = InMemoryStorage()
+//
+//    var dictionary: [String: Data] = [:]
+//
+//    func set(data: Data, key: String) {
+//        dictionary[key] = data
+//    }
+//
+//    func get(key: String) -> Data? {
+//        return dictionary[key]
+//    }
+//}
+//
+//
+

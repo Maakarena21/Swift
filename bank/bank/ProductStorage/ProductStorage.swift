@@ -9,7 +9,7 @@ protocol ProductStorage {
 }
 
 class ProductStorageImpl: ProductStorage {
-
+    
     
     let storage: Storage
     
@@ -17,51 +17,92 @@ class ProductStorageImpl: ProductStorage {
         self.storage = storage
     }
     
-    func get(user: User) -> [Product] {
-        
-        guard let productData = storage.get(key: "products_of_user_\(user.id)") else {
-            return []
-        }
+    func get(user: User) -> [Product]  {
         do {
-            let products = try JSONDecoder().decode([Product].self, from: productData)
+            let products: [Product] = try storage.value(key: "products_of_user_\(user.id)")
             return products
         } catch {
-    
-            print("JSONDecoder error \(error)")
-    
             return []
+        }
     }
-}
-    
     func add(user: User, product: Product) {
-        
-        guard let productData = storage.get(key: "products_of_user_\(user.id)") else {
-            let array = [product]
-            
+        var products = get(user: user)
+        if products.isEmpty {
             do {
-                let arrayData = try JSONEncoder().encode(array)
-                storage.set(data: arrayData, key: "products_of_user_\(user.id)")
+                try storage.set(value: [product], key: "products_of_user_\(user.id)")
             } catch {
-                print("JSONEncoder error \(error)")
+                print("Error saving product")
             }
-            
-            return
-        }
-        
-        do {
-            var productArray = try JSONDecoder().decode([Product].self, from: productData)
-            
-            if let productIndex = productArray.firstIndex(where: { $0.id == product.id }) {
-                productArray[productIndex] = product
+        } else {
+            if let productIndex = products.firstIndex(where: { $0.id == product.id }) {
+                products[productIndex] = product
             } else {
-                productArray.append(product)
+                products.append(product)
             }
-            let arrayData = try JSONEncoder().encode(productArray)
-            storage.set(data: arrayData, key: "products_of_user_\(user.id)")
-        } catch {
-            print("JSONEncoder error \(error)")
+            do {
+                try storage.set(value: products, key: "products_of_user_\(user.id)")
+            } catch {
+                print("Error saving product")
+            }
         }
     }
 }
 
 
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        let productData = storage.get(key: "products_of_user_\(user.id)") else {
+//            return []
+//        }
+//        do {
+//            let products = try JSONDecoder().decode([Product].self, from: productData)
+//            return products
+//        } catch {
+//
+//            print("JSONDecoder error \(error)")
+//
+//            return []
+//    }
+//}
+//
+//    func add(user: User, product: Product) {
+//
+//        guard let productData = storage.get(key: "products_of_user_\(user.id)") else {
+//            let array = [product]
+//
+//            do {
+//                let arrayData = try JSONEncoder().encode(array)
+//                storage.set(data: arrayData, key: "products_of_user_\(user.id)")
+//            } catch {
+//                print("JSONEncoder error \(error)")
+//            }
+//
+//            return
+//        }
+//
+//        do {
+//            var productArray = try JSONDecoder().decode([Product].self, from: productData)
+//
+//            if let productIndex = productArray.firstIndex(where: { $0.id == product.id }) {
+//                productArray[productIndex] = product
+//            } else {
+//                productArray.append(product)
+//            }
+//            let arrayData = try JSONEncoder().encode(productArray)
+//            storage.set(data: arrayData, key: "products_of_user_\(user.id)")
+//        } catch {
+//            print("JSONEncoder error \(error)")
+//        }
+//    }
+//}

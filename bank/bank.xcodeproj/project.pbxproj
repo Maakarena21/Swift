@@ -20,8 +20,9 @@
 		09ADAD7C2640309C00054D63 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7B2640309C00054D63 /* Product.swift */; };
 		09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCD2652F55C007658E5 /* ProductStorage.swift */; };
 		09DCFCD02652F568007658E5 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCF2652F568007658E5 /* UserStorage.swift */; };
+		2672529B94A767D176AA1AD3 /* Pods_bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */; };
 		D1010960267F5AAD00B2E95D /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101095F267F5AAD00B2E95D /* Generics.swift */; };
-		D1B1115A267F502B003060EE /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B11159267F502B003060EE /* SettingsService.swift */; };
+		D17FA116267FEDD10017A38D /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FA115267FEDD10017A38D /* SettingsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06BC249CB783037B6C54F25C /* Pods-bank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bank.release.xcconfig"; path = "Target Support Files/Pods-bank/Pods-bank.release.xcconfig"; sourceTree = "<group>"; };
 		09080BEE266CCD2B00C9B25B /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		09080BF0266CD02400C9B25B /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		09080BF2266CD42200C9B25B /* FastPaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastPaymentService.swift; sourceTree = "<group>"; };
@@ -51,8 +53,10 @@
 		09ADAD7B2640309C00054D63 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		09DCFCCD2652F55C007658E5 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStorage.swift; sourceTree = "<group>"; };
 		09DCFCCF2652F568007658E5 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		149B45D29560AE09FB837063 /* Pods-bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bank.debug.xcconfig"; path = "Target Support Files/Pods-bank/Pods-bank.debug.xcconfig"; sourceTree = "<group>"; };
+		498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D101095F267F5AAD00B2E95D /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
-		D1B11159267F502B003060EE /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/Swift/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
+		D17FA115267FEDD10017A38D /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2672529B94A767D176AA1AD3 /* Pods_bank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +78,7 @@
 				09080BF0266CD02400C9B25B /* ServicesAssembly.swift */,
 				09080BF2266CD42200C9B25B /* FastPaymentService.swift */,
 				09080BF4266CEBF000C9B25B /* MoneyService.swift */,
-				D1B11159267F502B003060EE /* SettingsService.swift */,
+				D17FA115267FEDD10017A38D /* SettingsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -83,6 +88,8 @@
 			children = (
 				09ADAD6426402D4500054D63 /* bank */,
 				09ADAD6326402D4500054D63 /* Products */,
+				4B270CF6E54F438BD0E5561D /* Pods */,
+				BCA61AA148BD4B8C6FA92394 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +167,24 @@
 			path = ProductStorage;
 			sourceTree = "<group>";
 		};
+		4B270CF6E54F438BD0E5561D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				149B45D29560AE09FB837063 /* Pods-bank.debug.xcconfig */,
+				06BC249CB783037B6C54F25C /* Pods-bank.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BCA61AA148BD4B8C6FA92394 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D1010962267F5C9700B2E95D /* Generic */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09ADAD6926402D4500054D63 /* Build configuration list for PBXNativeTarget "bank" */;
 			buildPhases = (
+				31D4E783D27718B52C16247F /* [CP] Check Pods Manifest.lock */,
 				09ADAD5E26402D4500054D63 /* Sources */,
 				09ADAD5F26402D4500054D63 /* Frameworks */,
 				09ADAD6026402D4500054D63 /* CopyFiles */,
@@ -220,13 +246,38 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31D4E783D27718B52C16247F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		09ADAD5E26402D4500054D63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1B1115A267F502B003060EE /* SettingsService.swift in Sources */,
 				09080BEF266CCD2B00C9B25B /* ProductService.swift in Sources */,
+				D17FA116267FEDD10017A38D /* SettingsService.swift in Sources */,
 				09ADAD6626402D4500054D63 /* main.swift in Sources */,
 				09ADAD7426402D9800054D63 /* Bank.swift in Sources */,
 				09080BF1266CD02400C9B25B /* ServicesAssembly.swift in Sources */,
@@ -363,6 +414,7 @@
 		};
 		09ADAD6A26402D4500054D63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 149B45D29560AE09FB837063 /* Pods-bank.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,6 +424,7 @@
 		};
 		09ADAD6B26402D4500054D63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06BC249CB783037B6C54F25C /* Pods-bank.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";

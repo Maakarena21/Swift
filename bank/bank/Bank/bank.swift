@@ -117,14 +117,3 @@ extension BankImpl: Bank {
     
 }
 
-
-//let service = FastPaymentsAssembly().service
-//let bank1 = BankAssembly().bank
-//let bank2 = BankAssembly().bank
-//
-// создать клиентов, создать продукты клиентам, положить деньги на счет клиентов (пункт 0)
-//
-//service.register(receiver: bank1)
-//service.register(reciever: bank2)
-//
-//service.send(summ: <#T##Float#>, phone: <#T##Phone#>)
