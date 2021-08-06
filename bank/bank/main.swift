@@ -1,10 +1,10 @@
 import Foundation
+import EasyDi
 
 
+let assembly = BankAssembly.instance()
 
-let assembly = BankAssembly()
-
-let bank1 = assembly.bank //
+let bank1 = assembly.bank
 
 let client1 = bank1.createClient(name: "John1", secondName: "John1", lastName: "John1", email: "John1", phone: Phone(countryCode: 7, numberPhone: 9681448845), address: Address(country: "Russia1", city: "Moscow1", street: "Random1", house: "Random1", flat: 1, floor: 1))
 
@@ -26,8 +26,8 @@ let depositProduct2 = bank2.createDepositProduct(user: client2)
 let productPreferences2 = ProductPreferences(productReceiverId: depositProduct2.id, productSenderId: depositProduct2.id)
 bank2.set(user: client2, set: productPreferences2)
 
-let servicesAssembly = ServicesAssembly()
-let fastPaymentsService = servicesAssembly.fastPaymentService
+let servicesAssembly = ServicesAssembly.instance()
+let fastPaymentsService = servicesAssembly.fastPaymentsService
 
 try fastPaymentsService.send(from: Phone(countryCode: 7, numberPhone: 9681448845), summ: 150, to: Phone(countryCode: 7, numberPhone: 9671555927))
 

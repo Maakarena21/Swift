@@ -1,4 +1,4 @@
-framework module EasyDi {
+module EasyDi {
   umbrella header "EasyDi-umbrella.h"
 
   export *

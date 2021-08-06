@@ -13,14 +13,14 @@
 		09080BF5266CEBF000C9B25B /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09080BF4266CEBF000C9B25B /* MoneyService.swift */; };
 		09ADAD6626402D4500054D63 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD6526402D4500054D63 /* main.swift */; };
 		09ADAD7026402D7800054D63 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD6F26402D7800054D63 /* Storage.swift */; };
-		09ADAD7226402D8B00054D63 /* StorageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7126402D8B00054D63 /* StorageAssembly.swift */; };
+		09ADAD7226402D8B00054D63 /* StoragesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7126402D8B00054D63 /* StoragesAssembly.swift */; };
 		09ADAD7426402D9800054D63 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7326402D9800054D63 /* Bank.swift */; };
 		09ADAD7626402DAB00054D63 /* BankAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7526402DAB00054D63 /* BankAssembly.swift */; };
 		09ADAD7926402FFC00054D63 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7826402FFC00054D63 /* User.swift */; };
 		09ADAD7C2640309C00054D63 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ADAD7B2640309C00054D63 /* Product.swift */; };
 		09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCD2652F55C007658E5 /* ProductStorage.swift */; };
 		09DCFCD02652F568007658E5 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DCFCCF2652F568007658E5 /* UserStorage.swift */; };
-		2672529B94A767D176AA1AD3 /* Pods_bank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */; };
+		3DAFA700F60B2015E44DFBDB /* libPods-bank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B394BBB06A9DCC09F228B4D1 /* libPods-bank.a */; };
 		D1010960267F5AAD00B2E95D /* Generics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101095F267F5AAD00B2E95D /* Generics.swift */; };
 		D17FA116267FEDD10017A38D /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17FA115267FEDD10017A38D /* SettingsService.swift */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,7 @@
 		09ADAD6226402D4500054D63 /* bank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bank; sourceTree = BUILT_PRODUCTS_DIR; };
 		09ADAD6526402D4500054D63 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		09ADAD6F26402D7800054D63 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		09ADAD7126402D8B00054D63 /* StorageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAssembly.swift; sourceTree = "<group>"; };
+		09ADAD7126402D8B00054D63 /* StoragesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoragesAssembly.swift; sourceTree = "<group>"; };
 		09ADAD7326402D9800054D63 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		09ADAD7526402DAB00054D63 /* BankAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAssembly.swift; sourceTree = "<group>"; };
 		09ADAD7826402FFC00054D63 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		09DCFCCD2652F55C007658E5 /* ProductStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStorage.swift; sourceTree = "<group>"; };
 		09DCFCCF2652F568007658E5 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		149B45D29560AE09FB837063 /* Pods-bank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bank.debug.xcconfig"; path = "Target Support Files/Pods-bank/Pods-bank.debug.xcconfig"; sourceTree = "<group>"; };
-		498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B394BBB06A9DCC09F228B4D1 /* libPods-bank.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bank.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D101095F267F5AAD00B2E95D /* Generics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generics.swift; sourceTree = "<group>"; };
 		D17FA115267FEDD10017A38D /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsService.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/bank/bank/Services/SettingsService.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2672529B94A767D176AA1AD3 /* Pods_bank.framework in Frameworks */,
+				3DAFA700F60B2015E44DFBDB /* libPods-bank.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				09ADAD6F26402D7800054D63 /* Storage.swift */,
-				09ADAD7126402D8B00054D63 /* StorageAssembly.swift */,
+				09ADAD7126402D8B00054D63 /* StoragesAssembly.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -173,14 +173,13 @@
 				149B45D29560AE09FB837063 /* Pods-bank.debug.xcconfig */,
 				06BC249CB783037B6C54F25C /* Pods-bank.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		BCA61AA148BD4B8C6FA92394 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				498E89A0FC64D4DC413FDB68 /* Pods_bank.framework */,
+				B394BBB06A9DCC09F228B4D1 /* libPods-bank.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -289,7 +288,7 @@
 				09080BF3266CD42200C9B25B /* FastPaymentService.swift in Sources */,
 				09DCFCCE2652F55C007658E5 /* ProductStorage.swift in Sources */,
 				D1010960267F5AAD00B2E95D /* Generics.swift in Sources */,
-				09ADAD7226402D8B00054D63 /* StorageAssembly.swift in Sources */,
+				09ADAD7226402D8B00054D63 /* StoragesAssembly.swift in Sources */,
 				09ADAD7C2640309C00054D63 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
