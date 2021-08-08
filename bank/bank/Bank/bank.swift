@@ -1,5 +1,5 @@
 import Foundation
-
+import EasyDi
 enum BankErrors: Error {
     case productNotFound
 }
@@ -18,6 +18,10 @@ protocol Bank {
     func remove(phone: Phone, product: Product, money: Float) throws
     func getPreferences(user:User) -> ProductPreferences?
     func set(user: User, set: ProductPreferences)
+    func search(phone: Phone) throws -> User
+    func users() -> [User]
+    func allProducts(user: User) -> [Product]
+    
 }
 
 class BankImpl {
@@ -42,6 +46,18 @@ class BankImpl {
 }
 
 extension BankImpl: Bank {
+    func allProducts(user: User) -> [Product] {
+        productStorage.get(user: user)
+    }
+    
+    func search(phone: Phone) throws -> User {
+        return try userStorage.search(phone: phone)
+    }
+    
+    func users() -> [User] {
+        return userStorage.users()
+    }
+    
     func getPreferences(user: User) -> ProductPreferences? {
         return preferencesService.getPreferences(user: user) // done
     }

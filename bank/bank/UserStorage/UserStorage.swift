@@ -1,4 +1,4 @@
-
+import EasyDi
 import Foundation
 
 enum UserStorageError: Error {

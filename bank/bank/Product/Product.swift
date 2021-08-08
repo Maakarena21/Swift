@@ -1,11 +1,11 @@
 import Foundation
+import EasyDi
 
 struct Credit: Codable {
     let summ: Float
     let months: Int
     let percentYear: Float
 }
-
 enum CashOutType: String, Codable {
     case month
     case year
