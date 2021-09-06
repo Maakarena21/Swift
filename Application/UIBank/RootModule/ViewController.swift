@@ -1,119 +1,263 @@
-//
-//  ViewController.swift
-//  UIBank
-//
-//  Created by Silence on 14.07.2021.
-//
-import EasyDi
+
 import UIKit
 import PhoneNumberKit
 
 
+struct DescriptionState {
+    var name: String?
+    var secondName: String?
+    var lastName: String?
+    var email: String?
+    var numberPhone: String?
+    var country: String?
+    var city: String?
+    var street: String?
+    var house: String?
+    var floor: String?
+    var flat: String?
+
+}
+
+protocol RegisterView: AnyObject {
+    var descriptionState: DescriptionState? {get}
+    func displayElements()
+}
+
 class ViewController: UIViewController {
-//    let bank = BankAssembly.instance().bank
-      var bank: Bank!
-      var userRouter: UserRouter!
-      var services: ServicesAssembly!
-      let phoneNumberKit = PhoneNumberKit()
-      var senderMoney: SenderMoneyAssembly!
+    
+    var registerPresenter: RegisterPresenter!
+    var senderMoneyPresenter: SenderMoneyPresenterView!
     
     
-    
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var secondNameTextField:UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var countryCodeTextField: UITextField!
-    @IBOutlet weak var numberPhoneTextField: UITextField!
-    
-    @IBOutlet weak var countryTextField: UITextField!
-    @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var streetTextField: UITextField!
-    @IBOutlet weak var houseTextField: UITextField!
-    @IBOutlet weak var floorTextField: UITextField!
-    @IBOutlet weak var flatTextField: UITextField!
+    let numberPhoneTextField = PhoneNumberTextField()
+    let nameTextField = UITextField()
+    let secondNameTextField = UITextField()
+    let lastNameTextField = UITextField()
+    let emailTextField = UITextField()
+    let countryTextField = UITextField()
+    let cityTextField = UITextField()
+    let streetTextField = UITextField()
+    let houseTextField = UITextField()
+    let floorTextField = UITextField()
+    let flatTextField = UITextField()
+    let registerButton = UIButton()
+    let showClientsButton = UIButton()
+    let stackView = UIStackView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerPresenter.viewLoaded()
+        view.backgroundColor = .white
         
-        
-        
-        nameTextField.placeholder = "Имя"
-        secondNameTextField.placeholder = "Фамилия"
-        lastNameTextField.placeholder = "Отчество"
-        
-        emailTextField.placeholder = "Email"
-        countryCodeTextField.placeholder = "Код страны"
-        numberPhoneTextField.placeholder = "Номер телефона"
-        
-        countryTextField.placeholder = "Страна"
-        cityTextField.placeholder = "Город"
-        streetTextField.placeholder = "Улица"
-        houseTextField.placeholder = "Дом"
-        flatTextField.placeholder = "Квартира"
-        floorTextField.placeholder = "Этаж"
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func registerButton() {
+    @objc func buttonRegistration() {
+            view.endEditing(true)
+            registerPresenter.registerButtonTapped()
+        }
+    
+    @objc func listRegisterUsers() {
         view.endEditing(true)
-        
-        
-        
-        let name = nameTextField.text ?? ""
-        let secondName = secondNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let countryCode = countryCodeTextField.text ?? ""
-        let numberPhone = numberPhoneTextField.text ?? ""
-        let country = countryTextField.text ?? ""
-        let city = cityTextField.text ?? ""
-        let street = streetTextField.text ?? ""
-        let house = houseTextField.text ?? ""
-        let floor = floorTextField.text ?? ""
-        let flat = flatTextField.text ?? ""
-        
-        
-        let alert = UIAlertController(title: "", message: "Заполните поле", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-        
-       let user = bank.createClient(name: name,
-                          secondName: secondName,
-                          lastName: lastName,
-                          email: email,
-                          phone: Phone(countryCode: Int(countryCode) ?? 0, numberPhone: Int(numberPhone) ?? 0),
-                          address: Address(country: country,
-                                           city: city,
-                                           street: street,
-                                           house: house,
-                                           flat: Int(flat) ?? 0,
-                                           floor: Int(floor) ?? 0))
-
-//        if name.isEmpty ||
-//           secondName.isEmpty ||
-//            lastName.isEmpty ||
-//            email.isEmpty ||
-        
-        
-//        do {
-//            let phoneNumberKit = try PhoneNumberKit.parse("\(numberPhone)")
-//            let phoneNumberCountry= try numberPhone.co
-//
-//        }
-        
-
-        userRouter.userDetails(user: user)
+        registerPresenter.showClientsButtonTapped()
     }
+// vvpskvd
     
-    
-    @IBAction func showClientButton() {
-        userRouter.usersList()
-    }
-    
-    
-    @IBAction func moneySenderButton() {
-        userRouter.moneySender()
-    }
 }
 
+extension ViewController: RegisterView {
+    
+    var descriptionState: DescriptionState? {
+        DescriptionState(name: nameTextField.text,
+                         secondName: secondNameTextField.text,
+                         lastName: lastNameTextField.text,
+                         email: emailTextField.text,
+                         numberPhone: numberPhoneTextField.text,
+                         country: countryTextField.text,
+                         city: cityTextField.text,
+                         street: streetTextField.text,
+                         house: houseTextField.text,
+                         floor: floorTextField.text,
+                         flat: flatTextField.text)
+    }
+    
+    internal func displayElements() {
+        addViewElements()
+        setupAddView()
+        
+    }
+    
+    
+    private func setupAddView() {
+        setupStackView()
+        setupNameTextField()
+        setupSecondNameTextField()
+        setupLastNameTextField()
+        setupEmailTextField()
+        setupCountryTextField()
+        setupNumberPhoneTextField()
+        setupCityTextField()
+        setupHouseTextField()
+        setupStreetTextField()
+        setupFloorTextField()
+        setupFlatTextField()
+        setupRegisterButton()
+        setupShowClientsButton()
 
+    }
+    
+    private func addViewElements() {
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(nameTextField)
+        stackView.addArrangedSubview(secondNameTextField)
+        stackView.addArrangedSubview(lastNameTextField)
+        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(numberPhoneTextField)
+        stackView.addArrangedSubview(countryTextField)
+        stackView.addArrangedSubview(cityTextField)
+        stackView.addArrangedSubview(streetTextField)
+        stackView.addArrangedSubview(houseTextField)
+        stackView.addArrangedSubview(floorTextField)
+        stackView.addArrangedSubview(flatTextField)
+        stackView.addArrangedSubview(registerButton)
+        stackView.addArrangedSubview(showClientsButton)
+    }
+    
+    private func setupStackView() {
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+               ])
+    }
+    
+    
+    private func setupNameTextField() {
+        nameTextField.placeholder = "Имя"
+        nameTextField.layer.cornerRadius = 5.0
+        nameTextField.layer.borderWidth = 1.0
+        nameTextField.layer.borderColor = UIColor.systemGray.cgColor
+        nameTextField.translatesAutoresizingMaskIntoConstraints = false
+          
+          
+      }
+    
+    private func setupSecondNameTextField() {
+        secondNameTextField.placeholder = "Фамилия"
+        secondNameTextField.layer.cornerRadius = 5.0
+        secondNameTextField.layer.borderWidth = 1.0
+        secondNameTextField.layer.borderColor = UIColor.systemGray.cgColor
+        secondNameTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupLastNameTextField() {
+        lastNameTextField.placeholder = "Отчество"
+        lastNameTextField.layer.cornerRadius = 5.0
+        lastNameTextField.layer.borderWidth = 1.0
+        lastNameTextField.layer.borderColor = UIColor.systemGray.cgColor
+        
+        lastNameTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    private func setupEmailTextField() {
+        emailTextField.placeholder = "Email"
+        emailTextField.layer.cornerRadius = 5.0
+        emailTextField.layer.borderWidth = 1.0
+        emailTextField.layer.borderColor = UIColor.systemGray.cgColor
+        
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    private func setupCountryTextField() {
+        countryTextField.placeholder = "Страна"
+        countryTextField.layer.cornerRadius = 5.0
+        countryTextField.layer.borderWidth = 1.0
+        countryTextField.layer.borderColor = UIColor.systemGray.cgColor
+        countryTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+    }
+    
+    private func setupNumberPhoneTextField() {
+        numberPhoneTextField.placeholder = "Номер телефона"
+        numberPhoneTextField.layer.cornerRadius = 5.0
+        numberPhoneTextField.layer.borderWidth = 1.0
+        numberPhoneTextField.layer.borderColor = UIColor.systemGray.cgColor
+        numberPhoneTextField.translatesAutoresizingMaskIntoConstraints = false
+        numberPhoneTextField.withFlag = true
+        
+    }
+    
+    private func setupCityTextField()  {
+        cityTextField.placeholder = "Город"
+        cityTextField.layer.cornerRadius = 5.0
+        cityTextField.layer.borderWidth = 1.0
+        cityTextField.layer.borderColor = UIColor.systemGray.cgColor
+        cityTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupStreetTextField() {
+        streetTextField.placeholder = "Улица"
+        streetTextField.layer.cornerRadius = 5.0
+        streetTextField.layer.borderWidth = 1.0
+        streetTextField.layer.borderColor = UIColor.systemGray.cgColor
+        streetTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    
+    private func setupHouseTextField() {
+        houseTextField.placeholder = "Дом"
+        houseTextField.layer.cornerRadius = 5.0
+        houseTextField.layer.borderWidth = 1.0
+        houseTextField.layer.borderColor = UIColor.systemGray.cgColor
+        houseTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupFloorTextField() {
+        floorTextField.placeholder = "Этаж"
+        floorTextField.layer.cornerRadius = 5.0
+        floorTextField.layer.borderWidth = 1.0
+        floorTextField.layer.borderColor = UIColor.systemGray.cgColor
+        floorTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupFlatTextField() {
+        flatTextField.placeholder = "Квартира"
+        flatTextField.layer.cornerRadius = 5.0
+        flatTextField.layer.borderWidth = 1.0
+        flatTextField.layer.borderColor = UIColor.systemGray.cgColor
+        flatTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setupRegisterButton() {
+        registerButton.addTarget(self, action: #selector(buttonRegistration), for: .touchUpInside)
+        registerButton.setTitle("Зарегистрировать", for: .normal)
+        
+        registerButton.backgroundColor = .red
+        registerButton.layer.cornerRadius = 12
+        registerButton.layer.masksToBounds = true
+        registerButton.setTitleColor(.white, for: .normal)
+        registerButton.setImage(UIImage(systemName: "folder"), for: .normal)
+        registerButton.tintColor = .black
+        
+        registerButton.translatesAutoresizingMaskIntoConstraints = false
+        
+    }
+    private func setupShowClientsButton() {
+        showClientsButton.addTarget(self, action: #selector(listRegisterUsers), for: .touchUpInside)
+        showClientsButton.setTitle("Показать список зарегистрированных", for: .normal)
+        
+        showClientsButton.backgroundColor = .systemBlue
+        showClientsButton.layer.cornerRadius = 12
+        showClientsButton.layer.masksToBounds = true
+        showClientsButton.setTitleColor(.white, for: .normal)
+        showClientsButton.setImage(UIImage(systemName: "folder"), for: .normal)
+        showClientsButton.tintColor = .black
+        showClientsButton.translatesAutoresizingMaskIntoConstraints = false
+      
+        
+    }
+}

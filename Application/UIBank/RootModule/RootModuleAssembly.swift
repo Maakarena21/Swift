@@ -1,13 +1,24 @@
 import EasyDi
 
 class RootModuleAssembly: Assembly {
-    private lazy var bankAssembly: BankAssembly = context.assembly()
+    private lazy var bank: BankAssembly = context.assembly()
+    private lazy var userRouter: UserRouterAssembly = context.assembly()
+    
+    
+    
+    func registerPresenter(view: RegisterView, viewController: UIViewController) -> RegisterPresenter {
+        define(init: RegisterPresenterImpl()) {
+            $0.bank = self.bank.bank
+            $0.registerView = view
+            $0.userRouter = self.userRouter.userRouter(view: viewController)
+            return $0
+
+        }
+    }
     
     var viewController: ViewController {
-        define(init: ViewControllersFactory().viewController(identifier: "ViewController") as ViewController) {
-            $0.bank = self.bankAssembly.bank
-            $0.userRouter = self.router(viewController: $0)
-            
+        define(init: ViewController()) {
+            $0.registerPresenter = self.registerPresenter(view: $0, viewController: $0)
             return $0
         }
     }

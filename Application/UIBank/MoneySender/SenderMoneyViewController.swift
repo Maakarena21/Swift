@@ -1,9 +1,21 @@
 import UIKit
 
+
+struct SenderMoneyViewState {
+    var countryCode: String?
+    var phoneNumber: String?
+    var theAmount: String?
+    var senderMoney: String?
+    var receiverMoney: String?
+    var summTransfer: String?
+}
+
+protocol SenderMoneyPresenterView: AnyObject {
+    var senderMoneyViewState: SenderMoneyViewState? {get}
+}
+
 class SenderMoneyViewController: UIViewController {
-    var bank: Bank!
-    var services: ServicesAssembly!
-    var moneyService: MoneyService!
+    var presenter: MoneySenderPresenter!
     
     
     
@@ -26,36 +38,16 @@ class SenderMoneyViewController: UIViewController {
         senderMoney.placeholder = "Отправитель денег"
         receiverMoney.placeholder = "Получатель денег"
         summTransfer.placeholder = "Cумма отправки"
+        view.backgroundColor = .white
 
         
     }
-    
-    
     @IBAction func createDeposit() {
-        let countryCode = countryCode.text ?? ""
-        let phoneNumber = phoneNumber.text ?? ""
-        do {
-            let user = try bank.search(phone: Phone(countryCode: Int(countryCode) ?? 0, numberPhone: Int(phoneNumber) ?? 0))
-            let createDeposit = bank.createDepositProduct(user: user)
-            print(createDeposit)
-        } catch {
-            print("UserNotFound")
-        }
+        presenter.createDepositButtonTapped()
     }
     
     @IBAction func addMoney() {
-        let countryCode = countryCode.text ?? ""
-        let phoneNumber = phoneNumber.text ?? ""
-        let theAmount = theAmount.text ?? ""
-        do {
-            
-            let addMoney = try services.moneyService.recieve(summ: Float(theAmount) ?? 0.0, phone: Phone(countryCode: Int(countryCode) ?? 0, numberPhone: Int(phoneNumber) ?? 0))
-           
-            
-            print("Money added to")
-        } catch {
-            print("NoMoneyAdded")
-        }
+        presenter.addMoneyButtonTapped()
     }
     
     @IBAction func removeMoney() {
@@ -71,30 +63,13 @@ class SenderMoneyViewController: UIViewController {
     
     
     @IBAction func moneyTransfer() {
-        
-        let alert = UIAlertController(title: "", message: "Данные введены неверно", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))
-        
-        let countryCode = countryCode.text ?? ""
-        let phoneNumber = phoneNumber.text ?? ""
-        let senderMoneyPhone = senderMoney.text ?? ""
-        let receiverMoneyPhone = receiverMoney.text ?? ""
-        let summTransfer = summTransfer.text ?? ""
-        
-        
-        do {
-            
-            if senderMoneyPhone == "" || receiverMoneyPhone == "" {
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                
-              let moneyTransfer = try services.fastPaymentsService.send(from: Phone(countryCode: Int(countryCode) ?? 0, numberPhone: Int(phoneNumber) ?? 0), summ: Float(summTransfer) ?? 0.0, to: Phone(countryCode: Int(countryCode) ?? 0, numberPhone: Int(phoneNumber) ?? 0))
-                print("MoneyTransferred")
-            }
-        } catch {
-            print("NotBeenTransferred")
-        }
-        
-    }
+        presenter.moneyTransferButtonTapped()
 }
+    }
 
+extension SenderMoneyViewController: SenderMoneyPresenterView {
+    var senderMoneyViewState: SenderMoneyViewState? {
+        SenderMoneyViewState(countryCode: countryCode.text, phoneNumber: phoneNumber.text, theAmount: theAmount.text, senderMoney: senderMoney.text, receiverMoney: receiverMoney.text, summTransfer: summTransfer.text)
+    }
+
+}

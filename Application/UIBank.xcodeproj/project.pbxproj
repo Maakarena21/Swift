@@ -8,7 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		75E26788BEC300774D8915D7 /* libPods-UIBank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E58E60F3BD553B71212B75D6 /* libPods-UIBank.a */; };
+		D11B1EDE26CEF66400C1DC92 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11B1EDD26CEF66400C1DC92 /* UserDetailsPresenter.swift */; };
 		D12330F426BFEBD70084D4C0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12330F326BFEBD70084D4C0 /* ProductCell.swift */; };
+		D130A32126E2CE7900CC8998 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32026E2CE7900CC8998 /* CreateProductViewController.swift */; };
+		D130A32326E2CE9F00CC8998 /* CreateProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32226E2CE9F00CC8998 /* CreateProductPresenter.swift */; };
+		D130A32526E2CEAE00CC8998 /* CreateProductAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32426E2CEAE00CC8998 /* CreateProductAssembly.swift */; };
+		D130A32726E42B2E00CC8998 /* RateRervice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32626E42B2E00CC8998 /* RateRervice.swift */; };
 		D168C8EA26BDF4990037DAFC /* SenderMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */; };
 		D168C8EC26BDF4A70037DAFC /* SenderMoneyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */; };
 		D168C8EE26BDF4BD0037DAFC /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8ED26BDF4BD0037DAFC /* UserListViewController.swift */; };
@@ -20,7 +25,6 @@
 		D1820BCA269F474700A5D44A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BC9269F474700A5D44A /* AppDelegate.swift */; };
 		D1820BCC269F474700A5D44A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BCB269F474700A5D44A /* SceneDelegate.swift */; };
 		D1820BCE269F474700A5D44A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BCD269F474700A5D44A /* ViewController.swift */; };
-		D1820BD1269F474700A5D44A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1820BCF269F474700A5D44A /* Main.storyboard */; };
 		D1820BD3269F475300A5D44A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1820BD2269F475300A5D44A /* Assets.xcassets */; };
 		D1820BD6269F475300A5D44A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1820BD4269F475300A5D44A /* LaunchScreen.storyboard */; };
 		D1820BF7269F479100A5D44A /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BE0269F479100A5D44A /* UserStorage.swift */; };
@@ -37,26 +41,38 @@
 		D1820C04269F479100A5D44A /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BF4269F479100A5D44A /* ProductService.swift */; };
 		D1820C05269F479100A5D44A /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BF5269F479100A5D44A /* SettingsService.swift */; };
 		D1820C06269F479100A5D44A /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BF6269F479100A5D44A /* MoneyService.swift */; };
+		D1A5334026C7130E00B093E0 /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5333F26C7130E00B093E0 /* UserListPresenter.swift */; };
+		D1A5334226C8082700B093E0 /* SenderMoneyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */; };
+		D1A5334826C84E3900B093E0 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334726C84E3900B093E0 /* ProductDetailsViewController.swift */; };
+		D1A5334A26C84EEC00B093E0 /* ProductDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334926C84EEC00B093E0 /* ProductDetailsAssembly.swift */; };
 		D1B97E1A26ACC6A600EAFE9C /* ViewControllersFactrory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B97E1926ACC6A600EAFE9C /* ViewControllersFactrory.swift */; };
+		D1DC394826C87AEC0044DBFD /* ProductDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC394726C87AEC0044DBFD /* ProductDetailsPresenter.swift */; };
+		D1E3FDD726E6AEF10004C491 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E3FDD626E6AEF10004C491 /* RegisterPresenter.swift */; };
+		D1EA010026C5AF6B00E65146 /* UserRouterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EA00FF26C5AF6B00E65146 /* UserRouterAssembly.swift */; };
+		D1EA010326C5BB1900E65146 /* SupportFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EA010226C5BB1900E65146 /* SupportFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		21D6620FF8B5FD100AB94743 /* Pods-UIBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIBank.debug.xcconfig"; path = "Target Support Files/Pods-UIBank/Pods-UIBank.debug.xcconfig"; sourceTree = "<group>"; };
 		BF357305DFD2794E4452197C /* Pods-UIBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIBank.release.xcconfig"; path = "Target Support Files/Pods-UIBank/Pods-UIBank.release.xcconfig"; sourceTree = "<group>"; };
+		D11B1EDD26CEF66400C1DC92 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailsPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserDetails/UserDetailsPresenter.swift"; sourceTree = "<group>"; };
 		D12330F326BFEBD70084D4C0 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCell.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserDetails/ProductCell.swift"; sourceTree = "<group>"; };
+		D130A32026E2CE7900CC8998 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProductViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/CreateProduct/CreateProductViewController.swift"; sourceTree = "<group>"; };
+		D130A32226E2CE9F00CC8998 /* CreateProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProductPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/CreateProduct/CreateProductPresenter.swift"; sourceTree = "<group>"; };
+		D130A32426E2CEAE00CC8998 /* CreateProductAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProductAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/CreateProduct/CreateProductAssembly.swift"; sourceTree = "<group>"; };
+		D130A32626E42B2E00CC8998 /* RateRervice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RateRervice.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/bank/bank/Services/RateRervice.swift"; sourceTree = "<group>"; };
 		D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyViewController.swift"; sourceTree = "<group>"; };
 		D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyAssembly.swift"; sourceTree = "<group>"; };
 		D168C8ED26BDF4BD0037DAFC /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListViewController.swift"; sourceTree = "<group>"; };
 		D168C8EF26BDF4C70037DAFC /* UserListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListAssembly.swift"; sourceTree = "<group>"; };
 		D168C8F126BDF4D00037DAFC /* UserDetailsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailsAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserDetails/UserDetailsAssembly.swift"; sourceTree = "<group>"; };
 		D168C8F326BDF4D60037DAFC /* UserDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailsViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserDetails/UserDetailsViewController.swift"; sourceTree = "<group>"; };
-		D168C8F526BDF4F90037DAFC /* RootModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootModuleAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/RootModuleAssembly.swift"; sourceTree = "<group>"; };
+		D168C8F526BDF4F90037DAFC /* RootModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootModuleAssembly.swift; sourceTree = "<group>"; };
 		D168C8F726BDF5110037DAFC /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserRouter.swift; path = "../../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/UserRouter/UserRouter.swift"; sourceTree = "<group>"; };
 		D1820BC6269F474700A5D44A /* UIBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1820BC9269F474700A5D44A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1820BCB269F474700A5D44A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D1820BCD269F474700A5D44A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D1820BD0269F474700A5D44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1820BD2269F475300A5D44A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1820BD5269F475300A5D44A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1820BD7269F475300A5D44A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,7 +90,15 @@
 		D1820BF4269F479100A5D44A /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		D1820BF5269F479100A5D44A /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		D1820BF6269F479100A5D44A /* MoneyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
+		D1A5333F26C7130E00B093E0 /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListPresenter.swift"; sourceTree = "<group>"; };
+		D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SenderMoneyPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyPresenter.swift"; sourceTree = "<group>"; };
+		D1A5334726C84E3900B093E0 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailsViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/ProductDetails/ProductDetailsViewController.swift"; sourceTree = "<group>"; };
+		D1A5334926C84EEC00B093E0 /* ProductDetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailsAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/ProductDetails/ProductDetailsAssembly.swift"; sourceTree = "<group>"; };
 		D1B97E1926ACC6A600EAFE9C /* ViewControllersFactrory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactrory.swift; sourceTree = "<group>"; };
+		D1DC394726C87AEC0044DBFD /* ProductDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailsPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/ProductDetails/ProductDetailsPresenter.swift"; sourceTree = "<group>"; };
+		D1E3FDD626E6AEF10004C491 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/RegisterPresenter.swift"; sourceTree = "<group>"; };
+		D1EA00FF26C5AF6B00E65146 /* UserRouterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRouterAssembly.swift; path = "../../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/UserRouter/UserRouterAssembly.swift"; sourceTree = "<group>"; };
+		D1EA010226C5BB1900E65146 /* SupportFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SupportFormatter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/Formatter/SupportFormatter.swift"; sourceTree = "<group>"; };
 		E58E60F3BD553B71212B75D6 /* libPods-UIBank.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIBank.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,16 +135,28 @@
 			isa = PBXGroup;
 			children = (
 				D168C8F326BDF4D60037DAFC /* UserDetailsViewController.swift */,
+				D11B1EDD26CEF66400C1DC92 /* UserDetailsPresenter.swift */,
 				D168C8F126BDF4D00037DAFC /* UserDetailsAssembly.swift */,
 				D12330F326BFEBD70084D4C0 /* ProductCell.swift */,
 			);
 			path = UserDetails;
 			sourceTree = "<group>";
 		};
+		D130A31D26E2CE2000CC8998 /* CreateProduct */ = {
+			isa = PBXGroup;
+			children = (
+				D130A32026E2CE7900CC8998 /* CreateProductViewController.swift */,
+				D130A32226E2CE9F00CC8998 /* CreateProductPresenter.swift */,
+				D130A32426E2CEAE00CC8998 /* CreateProductAssembly.swift */,
+			);
+			path = CreateProduct;
+			sourceTree = "<group>";
+		};
 		D13965EE26AD68E9000BC7A5 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
 				D168C8ED26BDF4BD0037DAFC /* UserListViewController.swift */,
+				D1A5333F26C7130E00B093E0 /* UserListPresenter.swift */,
 				D168C8EF26BDF4C70037DAFC /* UserListAssembly.swift */,
 			);
 			path = UserList;
@@ -130,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				D168C8F726BDF5110037DAFC /* UserRouter.swift */,
+				D1EA00FF26C5AF6B00E65146 /* UserRouterAssembly.swift */,
 			);
 			path = UserRouter;
 			sourceTree = "<group>";
@@ -156,14 +193,16 @@
 			isa = PBXGroup;
 			children = (
 				D1820BDE269F479100A5D44A /* bank */,
+				D1EA010126C5BAE600E65146 /* Formatter */,
 				D1A4B81726AD816900BC1200 /* ViewControllerFactory */,
+				D130A31D26E2CE2000CC8998 /* CreateProduct */,
 				D1A4B81426AD7E3600BC1200 /* MoneySender */,
 				D13965EE26AD68E9000BC7A5 /* UserList */,
 				D104444526AD627000808810 /* UserDetails */,
+				D1A5334626C8299D00B093E0 /* ProductDetails */,
 				D1B97E1626ACC5A800EAFE9C /* RootModule */,
 				D1820BCB269F474700A5D44A /* SceneDelegate.swift */,
 				D1820BC9269F474700A5D44A /* AppDelegate.swift */,
-				D1820BCF269F474700A5D44A /* Main.storyboard */,
 				D1820BD2269F475300A5D44A /* Assets.xcassets */,
 				D1820BD4269F475300A5D44A /* LaunchScreen.storyboard */,
 				D1820BD7269F475300A5D44A /* Info.plist */,
@@ -245,6 +284,7 @@
 				D1820BF4269F479100A5D44A /* ProductService.swift */,
 				D1820BF5269F479100A5D44A /* SettingsService.swift */,
 				D1820BF6269F479100A5D44A /* MoneyService.swift */,
+				D130A32626E42B2E00CC8998 /* RateRervice.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -253,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */,
+				D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */,
 				D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */,
 			);
 			path = MoneySender;
@@ -266,14 +307,33 @@
 			path = ViewControllerFactory;
 			sourceTree = "<group>";
 		};
+		D1A5334626C8299D00B093E0 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				D1A5334726C84E3900B093E0 /* ProductDetailsViewController.swift */,
+				D1DC394726C87AEC0044DBFD /* ProductDetailsPresenter.swift */,
+				D1A5334926C84EEC00B093E0 /* ProductDetailsAssembly.swift */,
+			);
+			path = ProductDetails;
+			sourceTree = "<group>";
+		};
 		D1B97E1626ACC5A800EAFE9C /* RootModule */ = {
 			isa = PBXGroup;
 			children = (
-				D13965F326AD7A0F000BC7A5 /* UserRouter */,
 				D1820BCD269F474700A5D44A /* ViewController.swift */,
+				D1E3FDD626E6AEF10004C491 /* RegisterPresenter.swift */,
 				D168C8F526BDF4F90037DAFC /* RootModuleAssembly.swift */,
+				D13965F326AD7A0F000BC7A5 /* UserRouter */,
 			);
 			path = RootModule;
+			sourceTree = "<group>";
+		};
+		D1EA010126C5BAE600E65146 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				D1EA010226C5BB1900E65146 /* SupportFormatter.swift */,
+			);
+			path = Formatter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,7 +397,6 @@
 			files = (
 				D1820BD6269F475300A5D44A /* LaunchScreen.storyboard in Resources */,
 				D1820BD3269F475300A5D44A /* Assets.xcassets in Resources */,
-				D1820BD1269F474700A5D44A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,29 +450,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B97E1A26ACC6A600EAFE9C /* ViewControllersFactrory.swift in Sources */,
+				D1A5334A26C84EEC00B093E0 /* ProductDetailsAssembly.swift in Sources */,
+				D1EA010326C5BB1900E65146 /* SupportFormatter.swift in Sources */,
 				D168C8EA26BDF4990037DAFC /* SenderMoneyViewController.swift in Sources */,
 				D1820C05269F479100A5D44A /* SettingsService.swift in Sources */,
 				D168C8F626BDF4F90037DAFC /* RootModuleAssembly.swift in Sources */,
 				D1820C03269F479100A5D44A /* FastPaymentService.swift in Sources */,
 				D1820BF7269F479100A5D44A /* UserStorage.swift in Sources */,
 				D1820C02269F479100A5D44A /* ServicesAssembly.swift in Sources */,
+				D1EA010026C5AF6B00E65146 /* UserRouterAssembly.swift in Sources */,
 				D1820BFE269F479100A5D44A /* StoragesAssembly.swift in Sources */,
+				D1A5334826C84E3900B093E0 /* ProductDetailsViewController.swift in Sources */,
 				D1820BCE269F474700A5D44A /* ViewController.swift in Sources */,
 				D168C8F026BDF4C70037DAFC /* UserListAssembly.swift in Sources */,
 				D1820BFC269F479100A5D44A /* Product.swift in Sources */,
 				D1820C04269F479100A5D44A /* ProductService.swift in Sources */,
 				D1820BF8269F479100A5D44A /* BankAssembly.swift in Sources */,
 				D1820BFF269F479100A5D44A /* ProductStorage.swift in Sources */,
+				D130A32526E2CEAE00CC8998 /* CreateProductAssembly.swift in Sources */,
+				D11B1EDE26CEF66400C1DC92 /* UserDetailsPresenter.swift in Sources */,
 				D1820BF9269F479100A5D44A /* bank.swift in Sources */,
 				D12330F426BFEBD70084D4C0 /* ProductCell.swift in Sources */,
 				D168C8F226BDF4D00037DAFC /* UserDetailsAssembly.swift in Sources */,
 				D168C8F426BDF4D70037DAFC /* UserDetailsViewController.swift in Sources */,
+				D1A5334026C7130E00B093E0 /* UserListPresenter.swift in Sources */,
 				D1820C06269F479100A5D44A /* MoneyService.swift in Sources */,
+				D1E3FDD726E6AEF10004C491 /* RegisterPresenter.swift in Sources */,
 				D1820BFB269F479100A5D44A /* User.swift in Sources */,
 				D1820BCA269F474700A5D44A /* AppDelegate.swift in Sources */,
 				D1820BFA269F479100A5D44A /* BankAccount.swift in Sources */,
+				D130A32126E2CE7900CC8998 /* CreateProductViewController.swift in Sources */,
 				D168C8F826BDF5110037DAFC /* UserRouter.swift in Sources */,
+				D130A32326E2CE9F00CC8998 /* CreateProductPresenter.swift in Sources */,
+				D130A32726E42B2E00CC8998 /* RateRervice.swift in Sources */,
 				D168C8EE26BDF4BD0037DAFC /* UserListViewController.swift in Sources */,
+				D1A5334226C8082700B093E0 /* SenderMoneyPresenter.swift in Sources */,
+				D1DC394826C87AEC0044DBFD /* ProductDetailsPresenter.swift in Sources */,
 				D1820BCC269F474700A5D44A /* SceneDelegate.swift in Sources */,
 				D1820BFD269F479100A5D44A /* Storage.swift in Sources */,
 				D168C8EC26BDF4A70037DAFC /* SenderMoneyAssembly.swift in Sources */,
@@ -423,14 +495,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D1820BCF269F474700A5D44A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D1820BD0269F474700A5D44A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D1820BD4269F475300A5D44A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -493,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -548,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
