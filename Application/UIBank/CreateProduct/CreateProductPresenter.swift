@@ -12,7 +12,7 @@ class CreateProductPresenterImpl: CreateProductPresenter {
     var user: User!
     var moneyService: MoneyService!
     
-    var result: ((Product) -> ())?
+    var result: ((Product) -> ())? // callback
     weak var view: ProductView?
     
     
