@@ -1,7 +1,7 @@
 import Foundation
 import EasyDi
 
-
+// decision
 let assembly = BankAssembly.instance()
 
 let bank1 = assembly.bank
