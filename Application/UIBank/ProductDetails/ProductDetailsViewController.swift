@@ -15,7 +15,6 @@ protocol ProductDetailsView: AnyObject {
     func diplay(deposit: String)
 }
 
-
 class ProductDetailsViewController: UIViewController {
     var presenter: ProductDetailsPresenter!
     
@@ -35,7 +34,6 @@ class ProductDetailsViewController: UIViewController {
         view.backgroundColor = .white
         
     }
-    
     @objc private func addMoneyButton() {
         presenter.addMoneyButtonTapped()
         }
