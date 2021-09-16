@@ -20,6 +20,7 @@ protocol MoneyReciever {
 
 protocol MoneySender {
     func send(from: Phone, summ: Float) throws
+    func printProduct(phone: Phone) throws
 }
 
 
@@ -27,6 +28,8 @@ typealias MoneyService = MoneySender & MoneyReciever
 
 
 class MoneyServiceImpl: MoneyService {
+    
+    
   
     var preferencesService: PreferencesService
     var userStorage: UserStorage
@@ -73,6 +76,12 @@ class MoneyServiceImpl: MoneyService {
         } else {
             throw MoneyServiceError.productNotFound
         }
+    }
+    
+    func printProduct(phone: Phone) throws {
+        let user = try userStorage.search(phone: phone)
+        let products = productStorage.get(user: user)
+        print(products)
     }
     
 }

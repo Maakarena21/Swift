@@ -6,7 +6,7 @@ class RootModuleAssembly: Assembly {
     
     
     
-    func registerPresenter(view: RegisterView, viewController: UIViewController) -> RegisterPresenter {
+    func presenter(view: RegisterView, viewController: UIViewController) -> RegisterPresenter {
         define(init: RegisterPresenterImpl()) {
             $0.bank = self.bank.bank
             $0.registerView = view
@@ -18,7 +18,7 @@ class RootModuleAssembly: Assembly {
     
     var viewController: ViewController {
         define(init: ViewController()) {
-            $0.registerPresenter = self.registerPresenter(view: $0, viewController: $0)
+            $0.presenter = self.presenter(view: $0, viewController: $0)
             return $0
         }
     }

@@ -25,7 +25,7 @@ protocol RegisterView: AnyObject {
 
 class ViewController: UIViewController {
     
-    var registerPresenter: RegisterPresenter!
+    var presenter: RegisterPresenter!
     var senderMoneyPresenter: SenderMoneyPresenterView!
     
     
@@ -42,11 +42,12 @@ class ViewController: UIViewController {
     let flatTextField = UITextField()
     let registerButton = UIButton()
     let showClientsButton = UIButton()
+    let moneyTransferButton = UIButton()
     let stackView = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerPresenter.viewLoaded()
+        presenter.viewLoaded()
         view.backgroundColor = .white
         
         // Do any additional setup after loading the view.
@@ -54,12 +55,17 @@ class ViewController: UIViewController {
     
     @objc func buttonRegistration() {
             view.endEditing(true)
-            registerPresenter.registerButtonTapped()
+        presenter.registerButtonTapped()
         }
     
     @objc func listRegisterUsers() {
         view.endEditing(true)
-        registerPresenter.showClientsButtonTapped()
+        presenter.showClientsButtonTapped()
+    }
+    
+    @objc func moneyTransfer() {
+        view.endEditing(true)
+        presenter.moneyTransferuttonTapped()
     }
 // vvpskvd
     
@@ -103,6 +109,7 @@ extension ViewController: RegisterView {
         setupFlatTextField()
         setupRegisterButton()
         setupShowClientsButton()
+        configMoneyTransfer()
 
     }
     
@@ -121,6 +128,7 @@ extension ViewController: RegisterView {
         stackView.addArrangedSubview(flatTextField)
         stackView.addArrangedSubview(registerButton)
         stackView.addArrangedSubview(showClientsButton)
+        stackView.addArrangedSubview(moneyTransferButton)
     }
     
     private func setupStackView() {
@@ -239,7 +247,7 @@ extension ViewController: RegisterView {
         registerButton.backgroundColor = .red
         registerButton.layer.cornerRadius = 12
         registerButton.layer.masksToBounds = true
-        registerButton.setTitleColor(.white, for: .normal)
+        registerButton.setTitleColor(.white, for: .highlighted)
         registerButton.setImage(UIImage(systemName: "folder"), for: .normal)
         registerButton.tintColor = .black
         
@@ -253,11 +261,24 @@ extension ViewController: RegisterView {
         showClientsButton.backgroundColor = .systemBlue
         showClientsButton.layer.cornerRadius = 12
         showClientsButton.layer.masksToBounds = true
-        showClientsButton.setTitleColor(.white, for: .normal)
+        showClientsButton.setTitleColor(.darkText, for: .highlighted)
         showClientsButton.setImage(UIImage(systemName: "folder"), for: .normal)
         showClientsButton.tintColor = .black
         showClientsButton.translatesAutoresizingMaskIntoConstraints = false
       
         
+    }
+    
+    private func configMoneyTransfer() {
+        moneyTransferButton.addTarget(self, action: #selector(moneyTransfer), for: .touchUpInside)
+        moneyTransferButton.setTitle("Перевод Денег", for: .normal)
+        
+        moneyTransferButton.backgroundColor = .green
+        moneyTransferButton.layer.cornerRadius = 12
+        moneyTransferButton.layer.masksToBounds = true
+        moneyTransferButton.setTitleColor(.darkText, for: .highlighted)
+        moneyTransferButton.setImage(UIImage(systemName: "folder"), for: .normal)
+        moneyTransferButton.tintColor = .black
+        moneyTransferButton.translatesAutoresizingMaskIntoConstraints = false
     }
 }

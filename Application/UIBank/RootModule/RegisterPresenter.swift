@@ -5,7 +5,7 @@ protocol RegisterPresenter {
     func viewLoaded()
     func registerButtonTapped()
     func showClientsButtonTapped()
-    func moneySenderButtonTapped()
+    func moneyTransferuttonTapped()
 }
 
 class RegisterPresenterImpl {
@@ -25,7 +25,7 @@ extension RegisterPresenterImpl: RegisterPresenter {
         userRouter.usersList()
     }
     
-    func moneySenderButtonTapped() {
+    func moneyTransferuttonTapped() {
         userRouter.moneySender()
     }
     

@@ -53,6 +53,10 @@ class DoublyLinkedList<T>: CustomStringConvertible {
     var head: Node<T>? = nil
     var tail: Node<T>? = nil
     
+    
+    var isCirculated: Bool {
+        
+    }
     var isEmpty: Bool {
         head == nil
     }
@@ -286,3 +290,4 @@ stringList.insert(after: 2, value: "five")
 stringList.pop()
 print(stringList)
 
+// просканировал весь список и понять есть ли закругление

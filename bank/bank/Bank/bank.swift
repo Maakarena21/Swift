@@ -12,7 +12,8 @@ protocol Bank {
                       email: String,
                       phone: Phone,
                       address: Address) -> User
-    func createDepositProduct(user: User) -> Product
+    func createDepositProduct(user: User, initialSumm: Float) -> Product
+    // add summ in createDep
     func createCreditProduct(user: User) -> Product
     func add(phone: Phone, product: Product, money: Float) throws
     func remove(phone: Phone, product: Product, money: Float) throws
@@ -111,10 +112,10 @@ extension BankImpl: Bank {
         return user
     }
     
-    func createDepositProduct(user: User) -> Product {
+    func createDepositProduct(user: User, initialSumm: Float) -> Product {
         let product = Product(id: UUID().uuidString,
                               name: "Разделяй и зарабатывай!",
-                              type: .deposit(Deposit(percent: 12, summ: 0, type: .month)))
+                              type: .deposit(Deposit(percent: 12, summ: initialSumm, type: .month)))
         
         productStorage.add(user: user, product: product)
         

@@ -16,10 +16,18 @@ class UserDetailsPresenterImpl: UserDetailsPresenter {
     var products: [Product]!
     var userRouter: UserRouter!
     var bank: Bank!
+    var assembly: CreateProductAssembly!
+    
+    private let formatter = ProductFormatter()
     weak var view: UserDetailsView?
     
     func createProductButtonTapped() {
-        userRouter.createProduct(user: user)
+        userRouter.createProduct(user: user) { product in
+        var array = self.view?.currentState?.products ?? []
+            array.append(ProductInfo(productName: product.name, productType: self.formatter.format(product: product)))
+            self.view?.currentState = ProductState(products: array)
+            
+        }
 //        let product = bank.createDepositProduct(user: user)
 //        userRouter.productDetails(user: user, product: product)
     }

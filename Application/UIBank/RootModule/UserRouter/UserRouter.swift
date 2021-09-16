@@ -4,8 +4,9 @@ protocol UserRouter {
     func userDetails(user: User)
     func usersList()
     func moneySender()
-    func createProduct(user: User)
+    func createProduct(user: User, result: @escaping (Product) -> () )
     func productDetails(user: User, product: Product)
+    func dissmiss()
 }
 
 class UserRouterImpl: UserRouter {
@@ -17,16 +18,10 @@ class UserRouterImpl: UserRouter {
         viewController?.present(vc, animated: true, completion: nil)
     }
     
-    func createProduct(user: User) {
-        let vc = CreateProductAssembly.instance().viewController(user: user)
+    func createProduct(user: User, result: @escaping (Product) -> ()) {
+        let vc = CreateProductAssembly.instance().viewController(user: user, result: result)
         viewController?.present(vc, animated: true, completion: nil)
     }
-    
-//    func createProduct() {
-//        let vc = ProductDetailsAssembly.instance().viewController(user: user, product: product)
-//        viewController?.present(vc, animated: true, completion: nil)
-//    }
-    
     func usersList() {
         let vc = UserListAssembly.instance().viewController
         viewController?.present(vc(), animated: true, completion: nil)
@@ -40,5 +35,9 @@ class UserRouterImpl: UserRouter {
     func moneySender() {
         let vc = SenderMoneyAssembly.instance().viewController
         viewController?.present(vc, animated: true, completion: nil)
+    }
+    
+    func dissmiss() {
+        viewController?.dismiss(animated: true, completion: nil)
     }
 }

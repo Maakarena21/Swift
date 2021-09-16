@@ -8,10 +8,11 @@ protocol CreateProductPresenter {
 
 class CreateProductPresenterImpl: CreateProductPresenter {
     var bank: Bank!
-    var userRouter: UserRouter!
+    var router: UserRouter!
     var user: User!
     var moneyService: MoneyService!
     
+    var result: ((Product) -> ())?
     weak var view: ProductView?
     
     
@@ -24,13 +25,17 @@ class CreateProductPresenterImpl: CreateProductPresenter {
     func createProductButtonTapped() {
         guard let product = view?.viewState.productInfo.first(where: {$0.selected }) else {return}
         if product.id == "Депозит", let summ = view?.viewState.addMoneyTextField, let floatSumm = Float(summ) {
-          let createDepositProduct = bank.createDepositProduct(user: user)
+            let createDepositProduct = bank.createDepositProduct(user: user, initialSumm: Float(summ) ?? 0 )
             print(createDepositProduct)
+            result?(createDepositProduct)
+            router.dissmiss()
 
         } else if product.id == "Кредит" {
            let createCreditProduct = bank.createCreditProduct(user: user)
             print(createCreditProduct)
-    }
+            router.dissmiss()
+        }
+        
     
     }
 }

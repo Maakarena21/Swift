@@ -53,10 +53,10 @@ extension UserDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.detailTextLabel?.text = currentState?.products[indexPath.row].productName
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 15)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewCell", for: indexPath)
+        cell.textLabel?.text = currentState?.products[indexPath.row].productName
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 15)
         
         
         cell.detailTextLabel?.text = currentState?.products[indexPath.row].productType
@@ -74,18 +74,18 @@ extension UserDetailsViewController: UserDetailsView {
         
         addViews()
         setupViewElements()
-        productTableView.register(ProductCell.self, forCellReuseIdentifier: "Cell")
+        productTableView.register(ProductCell.self, forCellReuseIdentifier: "NewCell")
         productTableView.dataSource = self
        
     }
     
     private func addViews() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(fullNameLabel)
-        stackView.addArrangedSubview(secondNameLabel)
-        stackView.addArrangedSubview(lastNameLabel)
-        stackView.addArrangedSubview(productTableView)
-        stackView.addArrangedSubview(createProductButton)
+        stackView.addSubview(fullNameLabel)
+        stackView.addSubview(secondNameLabel)
+        stackView.addSubview(lastNameLabel)
+        stackView.addSubview(productTableView)
+        stackView.addSubview(createProductButton)
     }
     
     private func setupViewElements() {

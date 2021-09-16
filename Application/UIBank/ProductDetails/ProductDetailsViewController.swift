@@ -57,11 +57,11 @@ extension ProductDetailsViewController: ProductDetailsView {
     
     private func addViews() {
         view.addSubview(stackView)
-        stackView.addArrangedSubview(depositAmountLabel)
-        stackView.addArrangedSubview(addMoneyToDepositTextField)
-        stackView.addArrangedSubview(receiverNumberPhone)
-        stackView.addArrangedSubview(addMoneyToDepositButton)
-        stackView.addArrangedSubview(moneyTransferButton)
+        stackView.addSubview(depositAmountLabel)
+        stackView.addSubview(addMoneyToDepositTextField)
+        stackView.addSubview(receiverNumberPhone)
+        stackView.addSubview(addMoneyToDepositButton)
+        stackView.addSubview(moneyTransferButton)
         
     }
     
@@ -144,7 +144,7 @@ extension ProductDetailsViewController: ProductDetailsView {
         moneyTransferButton.setTitle("Перевести деньги", for: .normal)
         moneyTransferButton.layer.cornerRadius = 12
         moneyTransferButton.layer.masksToBounds = true
-        moneyTransferButton.setTitleColor(.black, for: .normal)
+        moneyTransferButton.setTitleColor(.black, for: .highlighted)
         moneyTransferButton.setImage(UIImage(systemName: "folder"), for: .normal)
         moneyTransferButton.tintColor = .black
         NSLayoutConstraint.activate([

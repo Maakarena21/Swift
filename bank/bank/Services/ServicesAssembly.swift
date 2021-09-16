@@ -17,8 +17,13 @@ class ServicesAssembly: Assembly {
         }
     }
     
+    
     var productService: ProductService {
         return define(init: ProductServiceImpl())
+    }
+    
+    var rateService: RateService {
+        return define(init: RateServiceImpl())
     }
     var moneyService: MoneyService {
         return define(init: MoneyServiceImpl(userStorage: self.storagesAssembly.userStorage, productStorage: self.storagesAssembly.productStorage , productService: self.productService ,preferencesService: self.preferencesService))

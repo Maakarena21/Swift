@@ -14,8 +14,6 @@
 		D130A32326E2CE9F00CC8998 /* CreateProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32226E2CE9F00CC8998 /* CreateProductPresenter.swift */; };
 		D130A32526E2CEAE00CC8998 /* CreateProductAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32426E2CEAE00CC8998 /* CreateProductAssembly.swift */; };
 		D130A32726E42B2E00CC8998 /* RateRervice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130A32626E42B2E00CC8998 /* RateRervice.swift */; };
-		D168C8EA26BDF4990037DAFC /* SenderMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */; };
-		D168C8EC26BDF4A70037DAFC /* SenderMoneyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */; };
 		D168C8EE26BDF4BD0037DAFC /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8ED26BDF4BD0037DAFC /* UserListViewController.swift */; };
 		D168C8F026BDF4C70037DAFC /* UserListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8EF26BDF4C70037DAFC /* UserListAssembly.swift */; };
 		D168C8F226BDF4D00037DAFC /* UserDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168C8F126BDF4D00037DAFC /* UserDetailsAssembly.swift */; };
@@ -42,7 +40,6 @@
 		D1820C05269F479100A5D44A /* SettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BF5269F479100A5D44A /* SettingsService.swift */; };
 		D1820C06269F479100A5D44A /* MoneyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1820BF6269F479100A5D44A /* MoneyService.swift */; };
 		D1A5334026C7130E00B093E0 /* UserListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5333F26C7130E00B093E0 /* UserListPresenter.swift */; };
-		D1A5334226C8082700B093E0 /* SenderMoneyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */; };
 		D1A5334826C84E3900B093E0 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334726C84E3900B093E0 /* ProductDetailsViewController.swift */; };
 		D1A5334A26C84EEC00B093E0 /* ProductDetailsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A5334926C84EEC00B093E0 /* ProductDetailsAssembly.swift */; };
 		D1B97E1A26ACC6A600EAFE9C /* ViewControllersFactrory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B97E1926ACC6A600EAFE9C /* ViewControllersFactrory.swift */; };
@@ -50,6 +47,10 @@
 		D1E3FDD726E6AEF10004C491 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E3FDD626E6AEF10004C491 /* RegisterPresenter.swift */; };
 		D1EA010026C5AF6B00E65146 /* UserRouterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EA00FF26C5AF6B00E65146 /* UserRouterAssembly.swift */; };
 		D1EA010326C5BB1900E65146 /* SupportFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EA010226C5BB1900E65146 /* SupportFormatter.swift */; };
+		D1EB298E26E8023600961051 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB298D26E8023600961051 /* Validate.swift */; };
+		D1EB299226E81B4C00961051 /* SenderMoneyAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB298F26E81B4C00961051 /* SenderMoneyAssembly.swift */; };
+		D1EB299326E81B4C00961051 /* SenderMoneyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB299026E81B4C00961051 /* SenderMoneyPresenter.swift */; };
+		D1EB299426E81B4C00961051 /* SenderMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB299126E81B4C00961051 /* SenderMoneyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +62,6 @@
 		D130A32226E2CE9F00CC8998 /* CreateProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProductPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/CreateProduct/CreateProductPresenter.swift"; sourceTree = "<group>"; };
 		D130A32426E2CEAE00CC8998 /* CreateProductAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProductAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/CreateProduct/CreateProductAssembly.swift"; sourceTree = "<group>"; };
 		D130A32626E42B2E00CC8998 /* RateRervice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RateRervice.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/bank/bank/Services/RateRervice.swift"; sourceTree = "<group>"; };
-		D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyViewController.swift"; sourceTree = "<group>"; };
-		D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyAssembly.swift"; sourceTree = "<group>"; };
 		D168C8ED26BDF4BD0037DAFC /* UserListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListViewController.swift"; sourceTree = "<group>"; };
 		D168C8EF26BDF4C70037DAFC /* UserListAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserListAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListAssembly.swift"; sourceTree = "<group>"; };
 		D168C8F126BDF4D00037DAFC /* UserDetailsAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDetailsAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserDetails/UserDetailsAssembly.swift"; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		D1820BF5269F479100A5D44A /* SettingsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsService.swift; sourceTree = "<group>"; };
 		D1820BF6269F479100A5D44A /* MoneyService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyService.swift; sourceTree = "<group>"; };
 		D1A5333F26C7130E00B093E0 /* UserListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/UserList/UserListPresenter.swift"; sourceTree = "<group>"; };
-		D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SenderMoneyPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/MoneySender/SenderMoneyPresenter.swift"; sourceTree = "<group>"; };
 		D1A5334726C84E3900B093E0 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailsViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/ProductDetails/ProductDetailsViewController.swift"; sourceTree = "<group>"; };
 		D1A5334926C84EEC00B093E0 /* ProductDetailsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductDetailsAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/ProductDetails/ProductDetailsAssembly.swift"; sourceTree = "<group>"; };
 		D1B97E1926ACC6A600EAFE9C /* ViewControllersFactrory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllersFactrory.swift; sourceTree = "<group>"; };
@@ -99,6 +97,10 @@
 		D1E3FDD626E6AEF10004C491 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/RegisterPresenter.swift"; sourceTree = "<group>"; };
 		D1EA00FF26C5AF6B00E65146 /* UserRouterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRouterAssembly.swift; path = "../../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/RootModule/UserRouter/UserRouterAssembly.swift"; sourceTree = "<group>"; };
 		D1EA010226C5BB1900E65146 /* SupportFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SupportFormatter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/Formatter/SupportFormatter.swift"; sourceTree = "<group>"; };
+		D1EB298D26E8023600961051 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Validate.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/Validatation/Validate.swift"; sourceTree = "<group>"; };
+		D1EB298F26E81B4C00961051 /* SenderMoneyAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyAssembly.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/SenderMoney/SenderMoneyAssembly.swift"; sourceTree = "<group>"; };
+		D1EB299026E81B4C00961051 /* SenderMoneyPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyPresenter.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/SenderMoney/SenderMoneyPresenter.swift"; sourceTree = "<group>"; };
+		D1EB299126E81B4C00961051 /* SenderMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SenderMoneyViewController.swift; path = "../../../../../../../ilushaabelkin/Desktop/Академия Swift/LearningSwift/Application/UIBank/SenderMoney/SenderMoneyViewController.swift"; sourceTree = "<group>"; };
 		E58E60F3BD553B71212B75D6 /* libPods-UIBank.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIBank.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,10 +195,11 @@
 			isa = PBXGroup;
 			children = (
 				D1820BDE269F479100A5D44A /* bank */,
+				D1EB298C26E801F700961051 /* Validatation */,
 				D1EA010126C5BAE600E65146 /* Formatter */,
 				D1A4B81726AD816900BC1200 /* ViewControllerFactory */,
 				D130A31D26E2CE2000CC8998 /* CreateProduct */,
-				D1A4B81426AD7E3600BC1200 /* MoneySender */,
+				D1A4B81426AD7E3600BC1200 /* SenderMoney */,
 				D13965EE26AD68E9000BC7A5 /* UserList */,
 				D104444526AD627000808810 /* UserDetails */,
 				D1A5334626C8299D00B093E0 /* ProductDetails */,
@@ -289,14 +292,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		D1A4B81426AD7E3600BC1200 /* MoneySender */ = {
+		D1A4B81426AD7E3600BC1200 /* SenderMoney */ = {
 			isa = PBXGroup;
 			children = (
-				D168C8E926BDF4990037DAFC /* SenderMoneyViewController.swift */,
-				D1A5334126C8082600B093E0 /* SenderMoneyPresenter.swift */,
-				D168C8EB26BDF4A70037DAFC /* SenderMoneyAssembly.swift */,
+				D1EB298F26E81B4C00961051 /* SenderMoneyAssembly.swift */,
+				D1EB299026E81B4C00961051 /* SenderMoneyPresenter.swift */,
+				D1EB299126E81B4C00961051 /* SenderMoneyViewController.swift */,
 			);
-			path = MoneySender;
+			path = SenderMoney;
 			sourceTree = "<group>";
 		};
 		D1A4B81726AD816900BC1200 /* ViewControllerFactory */ = {
@@ -334,6 +337,14 @@
 				D1EA010226C5BB1900E65146 /* SupportFormatter.swift */,
 			);
 			path = Formatter;
+			sourceTree = "<group>";
+		};
+		D1EB298C26E801F700961051 /* Validatation */ = {
+			isa = PBXGroup;
+			children = (
+				D1EB298D26E8023600961051 /* Validate.swift */,
+			);
+			path = Validatation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,9 +463,9 @@
 				D1B97E1A26ACC6A600EAFE9C /* ViewControllersFactrory.swift in Sources */,
 				D1A5334A26C84EEC00B093E0 /* ProductDetailsAssembly.swift in Sources */,
 				D1EA010326C5BB1900E65146 /* SupportFormatter.swift in Sources */,
-				D168C8EA26BDF4990037DAFC /* SenderMoneyViewController.swift in Sources */,
 				D1820C05269F479100A5D44A /* SettingsService.swift in Sources */,
 				D168C8F626BDF4F90037DAFC /* RootModuleAssembly.swift in Sources */,
+				D1EB298E26E8023600961051 /* Validate.swift in Sources */,
 				D1820C03269F479100A5D44A /* FastPaymentService.swift in Sources */,
 				D1820BF7269F479100A5D44A /* UserStorage.swift in Sources */,
 				D1820C02269F479100A5D44A /* ServicesAssembly.swift in Sources */,
@@ -465,10 +476,12 @@
 				D168C8F026BDF4C70037DAFC /* UserListAssembly.swift in Sources */,
 				D1820BFC269F479100A5D44A /* Product.swift in Sources */,
 				D1820C04269F479100A5D44A /* ProductService.swift in Sources */,
+				D1EB299226E81B4C00961051 /* SenderMoneyAssembly.swift in Sources */,
 				D1820BF8269F479100A5D44A /* BankAssembly.swift in Sources */,
 				D1820BFF269F479100A5D44A /* ProductStorage.swift in Sources */,
 				D130A32526E2CEAE00CC8998 /* CreateProductAssembly.swift in Sources */,
 				D11B1EDE26CEF66400C1DC92 /* UserDetailsPresenter.swift in Sources */,
+				D1EB299426E81B4C00961051 /* SenderMoneyViewController.swift in Sources */,
 				D1820BF9269F479100A5D44A /* bank.swift in Sources */,
 				D12330F426BFEBD70084D4C0 /* ProductCell.swift in Sources */,
 				D168C8F226BDF4D00037DAFC /* UserDetailsAssembly.swift in Sources */,
@@ -480,15 +493,14 @@
 				D1820BCA269F474700A5D44A /* AppDelegate.swift in Sources */,
 				D1820BFA269F479100A5D44A /* BankAccount.swift in Sources */,
 				D130A32126E2CE7900CC8998 /* CreateProductViewController.swift in Sources */,
+				D1EB299326E81B4C00961051 /* SenderMoneyPresenter.swift in Sources */,
 				D168C8F826BDF5110037DAFC /* UserRouter.swift in Sources */,
 				D130A32326E2CE9F00CC8998 /* CreateProductPresenter.swift in Sources */,
 				D130A32726E42B2E00CC8998 /* RateRervice.swift in Sources */,
 				D168C8EE26BDF4BD0037DAFC /* UserListViewController.swift in Sources */,
-				D1A5334226C8082700B093E0 /* SenderMoneyPresenter.swift in Sources */,
 				D1DC394826C87AEC0044DBFD /* ProductDetailsPresenter.swift in Sources */,
 				D1820BCC269F474700A5D44A /* SceneDelegate.swift in Sources */,
 				D1820BFD269F479100A5D44A /* Storage.swift in Sources */,
-				D168C8EC26BDF4A70037DAFC /* SenderMoneyAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

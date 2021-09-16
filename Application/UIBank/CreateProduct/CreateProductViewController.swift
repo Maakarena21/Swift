@@ -115,7 +115,7 @@ extension CreateProductViewController: ProductView {
         createProductButton.backgroundColor = .systemFill
         createProductButton.layer.cornerRadius = 12
         createProductButton.layer.masksToBounds = true
-        createProductButton.setTitleColor(.darkText, for: .normal)
+        createProductButton.setTitleColor(.darkText, for: .highlighted)
         createProductButton.setImage(UIImage(systemName: "folder"), for: .normal)
         createProductButton.tintColor = .black
         
